@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE rutas SYSTEM "rutas.dtd">
+<rutas> -->
+
+<rutas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="rutas.xsd">
+  <ruta nombre="Camino de Santiago" dificultad="Difícil" transporte="A pie">
+    <tipos>
+      <tipo> Arquitectura </tipo>
+      <tipo> Paisajes </tipo>
+    </tipos>
+    <tiempo duracion="1 mes" fecha-inicio="2020-11-25" hora-inicio="09:00:00" />
+
+    <agencia> Sin agencia</agencia>
+
+    <descripcion>Preciosa ruta a caballo que recorre el centro-occidente asturiano y Galicia.</descripcion>
+
+    <personas-adecuadas>+ 15 años </personas-adecuadas>
+
+    <inicio lugar="Oviedo" direccion="Plaza del Conceyín" />
+
+    <coordenadas latitud="43.385085" longitud="-5.819678" altitud="175" />
+
+    <referencias>
+      <referencia> https://caminodesantiago.consumer.es/los-caminos-de-santiago/camino-primitivo </referencia>
+      <referencia> https://www.gronze.com/camino-primitivo </referencia>
+      <referencia> https://www.pilgrim.es/camino-primitivo/ </referencia>
+    </referencias>
+
+    <recomendacion> 8 </recomendacion>
+
+    <hitos>
+      <hito nombre="Salas" distancia-desde-anterior="50" unidades-de-distancia="km">
+        <descripcion> El municipio de Salas se encuentra cerca de Oviedo y Avilés. De esta localidad cabe destacar el espectacular Palacio que encontramos en su casco histórico, el Palacio de Valdés </descripcion>
+        <coordenadas latitud="43.409066" longitud="-6.261133" altitud="239" />
+        <imagenes>
+          <imagen> https://fotos.hoteles.net/articulos/que-ver-y-hacer-en-salas-asturias-2355-1.jpg </imagen>
+          <imagen> https://cflvdg.avoz.es/default/2018/05/16/00121526467594720994366/Foto/1.jpg </imagen>
+          <imagen> https://upload.wikimedia.org/wikipedia/commons/2/25/Torresalas.jpg </imagen>
+        </imagenes>
+
+        <videos>
+          <video> https://www.youtube.com/embed/khPJgZAcCvU </video>
+        </videos>
+      </hito>
+
+      <hito nombre="Grandas de Salime" distancia-desde-anterior="85" unidades-de-distancia="km">
+        <descripcion> La localidad de Grandas de Salime se encuentra en la frontera con Galicia, es el último municipio en el camino Primitivo del Principado de Asturias. Debido a la cercania muchos de sus vecinos mas mayores hablan gallego en la actualidad."</descripcion>
+        <coordenadas latitud="43.217659" longitud="-6.875723" altitud="562" />
+        <imagenes>
+          <imagen> https://upload.wikimedia.org/wikipedia/commons/6/6c/PA120097_Grandas_salime.jpg </imagen>
+          <imagen> https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/PA120094_Grandas_salime.jpg/300px-PA120094_Grandas_salime.jpg </imagen>
+          <imagen> https://www.ecured.cu/images/f/fc/Grandas.jpg </imagen>
+        </imagenes>
+        <videos>
+          <video> https://www.youtube.com/embed/cipc7YEO7Nw </video>
+        </videos>
+      </hito>
+
+      <hito nombre="Lugo" distancia-desde-anterior="81" unidades-de-distancia="km">
+        <descripcion> Lugo es la segunda ciudad del Camino Primitivo con la que se van a encontrar los peregrinos, por lo que junto con Oviedo son las localidades más importantes de este trazado Jacobeo. </descripcion>
+        <coordenadas latitud="43.009618" longitud="-7.557527" altitud="465" />
+        <imagenes>
+          <imagen> https://1.bp.blogspot.com/-8wUB5wgsntY/Xwih8k7m_NI/AAAAAAAA6t4/ic24VJwoSfsoXSlyKIoQFw0krgiRv3uYACLcBGAsYHQ/s1600/Lugo-ViajesyRutas.jpg </imagen>
+          <imagen> https://static2.abc.es/media/espana/2020/01/20/lugo-k3P--620x349@abc.JPG </imagen>
+          <imagen> https://assets.afcdn.com/story/20190730/2018249_w980h638c1cx629cy629cxt0cyt0cxb1257cyb1257.jpg </imagen>
+        </imagenes>
+        <videos>
+          <video> https://www.youtube.com/embed/FbmeHY9jF-8 </video>
+        </videos>
+      </hito>
+
+      <hito nombre="O Pedrouzo" distancia-desde-anterior="81" unidades-de-distancia="km">
+        <descripcion> En O Pedrouzo los peregrinos hacen su última parada antes de la llegada a Santiago de Compostela. Se trata de un pequeño núcleo urbano perteneciente a la parroquia de Arca, que a su vez forma parte del municipio de O Pino. </descripcion>
+        <coordenadas latitud="42.904502" longitud="-8.362485" altitud="280" />
+        <imagenes>
+          <imagen> https://www.pilgrim.es/wp-content/uploads/2019/02/pedrouzo1.jpg </imagen>
+          <imagen> https://vivecamino.com/img/loc/av/pedrouzo_35.jpg </imagen>
+          <imagen> https://assets.afcdn.com/story/20190730/2018249_w980h638c1cx629cy629cxt0cyt0cxb1257cyb1257.jpg </imagen>
+        </imagenes>
+        <videos>
+          <video> https://www.youtube.com/embed/VqpuEPHKj4w </video>
+        </videos>
+      </hito>
+
+      <hito nombre="Santiago de compostela" distancia-desde-anterior="20" unidades-de-distancia="km">
+        <descripcion> La ciudad de Compostela está considerada como el pueblo más grande del mundo aunque sea a la vez una de las ciudades más pequeñas. La calidez de la gente, los rincones ajardinados, el casco histórico construido piedra a piedra alrededor de la Catedral, convierten a esta pequeña ciudad en algo muy grande </descripcion>
+        <coordenadas latitud="42.904502" longitud="-8.362485" altitud="280" />
+        <imagenes>
+          <imagen> https://images.musement.com/cover/0001/43/galicia-santiago-de-compostela-cathedral-jpg_header-42765.jpeg </imagen>
+          <imagen> https://img2.rtve.es/imagenes/ciudades-para-siglo-xxi-santiago-compostela-ciudad-pesa/1561717378960.jpg </imagen>
+          <imagen> https://static.wixstatic.com/media/5fcea0_7d6c4e6115aa44ddb7a5d2343cc55c38~mv2_d_3760_6016_s_4_2.jpg/v1/fill/w_1000,h_1600,al_c,q_90,usm_0.66_1.00_0.01/5fcea0_7d6c4e6115aa44ddb7a5d2343cc55c38~mv2_d_3760_6016_s_4_2.jpg </imagen>
+        </imagenes>
+        <videos>
+          <video> https://www.youtube.com/embed/S30ytqBSAP4</video>
+        </videos>
+      </hito>
+    </hitos>
+    <planimetria></planimetria>
+    <altimetria></altimetria>
+  </ruta>
+</rutas>
