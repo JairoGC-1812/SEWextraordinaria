@@ -6,9 +6,9 @@
   xsi:noNamespaceSchemaLocation="rutas.xsd">
   <ruta nombre="Ruta los Molinos del Ríu Profundu" dificultad="Baja" transporte="A pie">
     <tipos>
-      <tipo> Etnografía </tipo>
-      <tipo> Paisajes </tipo>
-      <tipo> Naturaleza </tipo>
+      <tipo> Etnográfica </tipo>
+      <tipo> Paisajística </tipo>
+      <tipo> Senderismo </tipo>
     </tipos>
     <tiempo duracion="5 horas" fecha-inicio="2023-06-10" hora-inicio="09:00:00" />
 
@@ -56,7 +56,7 @@
       </hito>
 
       <hito nombre="Molín de Perniles" distancia-desde-anterior="1.4" unidades-de-distancia="km">
-        <descripcion> En O Pedrouzo los peregrinos hacen su última parada antes de la llegada a Santiago de Compostela. Se trata de un pequeño núcleo urbano perteneciente a la parroquia de Arca, que a su vez forma parte del municipio de O Pino. </descripcion>
+        <descripcion>Ruinas del Molín de Perniles en un paraje ideal rodeado de vegetación y naturaleza. </descripcion>
         <coordenadas latitud="43.450349" longitud="-5.408034" altitud="102" />
         <imagenes>
           <imagen> ./multimedia/molin_perniles1.jpg </imagen>
@@ -74,11 +74,84 @@
           <video> ./multimedia/molin_peña.mp4</video>
         </videos>
       </hito>
-            <hito nombre="Molín d'Arriba" distancia-desde-anterior="1.0" unidades-de-distancia="km">
+
+      <hito nombre="Molín d'Arriba" distancia-desde-anterior="1.0" unidades-de-distancia="km">
         <descripcion> El molín d'Arriba es el último de esta ruta y otro de los que mejor se conserva. Se encuentra cerca de la aldea de Busllaz. </descripcion>
         <coordenadas latitud="43.433653" longitud="-5.391802" altitud="180" />
         <imagenes>
           <imagen> ./multimedia/darriba.jpg </imagen>
+        </imagenes>
+      </hito>
+    </hitos>
+    <planimetria></planimetria>
+    <altimetria></altimetria>
+  </ruta>
+  <ruta nombre="Ruta de Carlos V" dificultad="Media" transporte="Caballo">
+    <tipos>
+      <tipo> Histórica </tipo>
+      <tipo> Paisajística </tipo>
+      <tipo> Naturaleza </tipo>
+      <tipo> Costa </tipo>
+    </tipos>
+    <tiempo duracion="2 horas" fecha-inicio="2023-06-17" hora-inicio="12:30:00" />
+
+    <agencia>Rutas Babieca</agencia>
+
+    <descripcion>En 1517 el rey Carlos I de España y V de Alemania desembarcó en Tazones y se dirigió a Villaciosa, donde se alojó durante cuatro días. Esta ruta recrea el mismo camino que siguió el Séquito Real. </descripcion>
+
+    <personas-adecuadas>Adecuado para niños </personas-adecuadas>
+
+    <inicio lugar="Playa de Tazones" direccion="Tazones, 20, 33315, San Roque, Asturias" />
+    <coordenadas latitud="43.545177" longitud="-5.399650" altitud="0" />
+
+    <referencias>
+      <referencia> https://www.turismovillaviciosa.es/ruta-de-carlos-v/villaviciosa </referencia>
+      <referencia> https://www.turismoasturias.es/descubre/naturaleza/rutas/senderismo/ruta-carlos-v </referencia>
+      <referencia> https://www.guiarepsol.com/es/viajar/vamos-de-excursion/ruta-tazones-villaviciosa-camin-real-carlos-v-asturias/</referencia>
+      <referencia> https://www.turismoasturias.es/descubre/fiestas-de-interes-turistico/primer-desembarco-de-carlos-v</referencia>
+    </referencias>
+
+    <recomendacion> 9 </recomendacion>
+
+    <hitos>
+      <hito nombre="Lliñeru" distancia-desde-anterior="2.2" unidades-de-distancia="km">
+        <descripcion>Preciosa pequeña aldea de aproximadamente 60 habitantes rodeada de las típicas pumaradas</descripcion>
+        <coordenadas latitud="43.534367" longitud="-5.396329" altitud="160" />
+        <imagenes>
+          <imagen> ./multimedia/llineru_pumarada.jpg </imagen>
+          <imagen> ./multimedia/ria_llineru.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Samartín del Mar" distancia-desde-anterior="2.3" unidades-de-distancia="km">
+        <descripcion> Capital de la parroquia homónima, con vistas a la vega de la ría de Villaviciosa  </descripcion>
+        <coordenadas latitud="43.516857" longitud="-5.406217" altitud="50" />
+        <imagenes>
+          <imagen> ./multimedia/iglesia_samartin.jpg </imagen>
+        </imagenes>
+        <videos>
+          <video> ./multimedia/vista_aerea_samartin.mp4</video>
+        </videos>
+      </hito>
+
+      <hito nombre="Bedriñana" distancia-desde-anterior="4.1" unidades-de-distancia="km">
+        <descripcion> Desde esta aldea tan guapa casi se puede atisbar el famoso llagar de Sidra el Gaitero </descripcion>
+        <coordenadas latitud="43.499473" longitud="-5.440082" altitud="55" />
+        <imagenes>
+          <imagen> ./multimedia/iglesia_bedrinana.jpg </imagen>
+        </imagenes>
+        <videos>
+          <video> ./multimedia/vista_aerea_bedrinana.mp4</video>
+        </videos>
+      </hito>
+
+      <hito nombre="Villaviciosa" distancia-desde-anterior="2.8" unidades-de-distancia="km">
+        <descripcion> Llegamos a "La Villa", capital maliaya con enorme valor cultural, histórico y estético </descripcion>
+        <coordenadas latitud="43.481348" longitud="-5.433572" altitud="0" />
+        <imagenes>
+          <imagen> ./multimedia/villaviciosa_aerea.jpg </imagen>
+          <imagen> ./multimedia/villaviciosa_ayuntamiento.jpg </imagen>
+          <imagen> ./multimedia/villaviciosa_sidra.jpg </imagen>
         </imagenes>
       </hito>
     </hitos>
