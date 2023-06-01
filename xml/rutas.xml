@@ -158,4 +158,86 @@
     <planimetria></planimetria>
     <altimetria></altimetria>
   </ruta>
+
+  <ruta nombre="Ruta urbana Villaviciosa" dificultad="Baja" transporte="A pie">
+    <tipos>
+      <tipo> Urbana </tipo>
+      <tipo> Arquitectónica </tipo>
+      <tipo> Histórica </tipo>
+    </tipos>
+    <tiempo duracion="YA SE VERÁ"/>
+
+    <agencia> Sin agencia</agencia>
+
+    <descripcion>Ruta urbana por la capital maliaya, para disfrutar de los elementos más destacables de esta</descripcion>
+
+    <personas-adecuadas>Todas las edades</personas-adecuadas>
+
+    <inicio lugar="Ayuntamiento" direccion="Plaza del Ayuntamiento, S/N, Villaviciosa, Asturias" />
+    <coordenadas latitud="43.461328" longitud="-5.438658" altitud="6" />
+
+    <referencias>
+      <referencia> https://www.turismovillaviciosa.es/turismo/villaviciosa/ruta-historica-de-villaviciosa_2649_3_5503_0_1_in.html</referencia>
+      <referencia> https://www.dendecaguelu.com/2021/01/escultura-exaltacion-de-la-manzana-en.html </referencia>
+      <referencia> https://www.culturavillaviciosa.es/es/</referencia>
+    </referencias>
+
+    <recomendacion> 10 </recomendacion>
+
+    <hitos>
+      <hito nombre="Exaltación de la manzana" distancia-desde-anterior="150" unidades-de-distancia="m">
+        <descripcion> Monumento en honor a José Cardín Fernández, creado por Eduardo Úrculo</descripcion>
+        <coordenadas latitud="43.460210" longitud="-5.434374" altitud="9" />
+        <imagenes>
+          <imagen> ./multimedia/exaltacion_manzana_1.jpg </imagen>
+          <imagen> ./multimedia/exaltacion_manzana_2.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Ateneo Obrero" distancia-desde-anterior="210" unidades-de-distancia="m">
+        <descripcion> Edificio de la asociación sin ánimo de lucro homónima, dedicada a el ocio y recreo desde hace más de 100 años</descripcion>
+        <coordenadas latitud="43.481666" longitud="-5.434271" altitud="8" />
+        <imagenes>
+          <imagen> ./multimedia/ateneo_1.jpg </imagen>
+          <imagen> ./multimedia/ateneo_pintura.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Teatro Riera" distancia-desde-anterior="200" unidades-de-distancia="m">
+        <descripcion> Inaugurado a mediados de los 40, el teatro riera es, desde entonces, uno de los principales foros culturales del concejo. En él, se organizan exposiciones, festivales, proyecciones...</descripcion>
+        <coordenadas latitud="43.481826" longitud="-5.436343" altitud="6" />
+        <imagenes>
+          <imagen> ./multimedia/teatro_riera.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Restos de la muralla" distancia-desde-anterior="250" unidades-de-distancia="m">
+        <descripcion>Restos de la antigua muralla que rodeaba la villa </descripcion>
+        <coordenadas latitud="43.480061" longitud="-5.435038" altitud="8" />
+        <imagenes>
+          <imagen> ./multimedia/muralla1.jpg </imagen>
+          <imagen> ./multimedia/muralla2.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Monasterio de las Clarisas" distancia-desde-anterior="100" unidades-de-distancia="m">
+        <descripcion> Monasterio de la Purísima concepción, perteneciente a la Orden de las Clarisas </descripcion>
+        <coordenadas latitud="43.478750" longitud="-5.434361" altitud="19" />
+        <imagenes>
+          <imagen> ./multimedia/monasterio_clarisas.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Plaza de Abastos" distancia-desde-anterior="150" unidades-de-distancia="m">
+        <descripcion> Elemento central de Villaviciosa, diseñado con arquitectura de hierro por Miguel de la Guardia. Alberga una decena de locales con diversos productos </descripcion>
+        <coordenadas latitud="43.480257" longitud="-5.434233" altitud="10" />
+        <imagenes>
+          <imagen> ./multimedia/abastos_1.jpg </imagen>
+          <imagen> ./multimedia/abastos_2.jpg </imagen>
+        </imagenes>
+      </hito>
+    </hitos>
+    <planimetria></planimetria>
+    <altimetria></altimetria>
+  </ruta>
 </rutas>
