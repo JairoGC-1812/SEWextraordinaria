@@ -1,0 +1,78 @@
+/* 
+=========================================================== 
+    Autor: Jairo García Castro - UO271449
+    Descripción de la hoja de estilo: 
+    Hoja que gestiona la maquetación de los documentos
+===========================================================
+*/
+
+header {
+    width: 100%;
+    margin-top: 0;
+}
+
+footer {
+    width: 100%;
+}
+
+main>section>h2 {
+    width: 100%;
+}
+main>section{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+main>section>button{
+    margin: auto 1% auto 1%;
+}
+main>article {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+main>article>h2 {
+    width: 100%;
+}
+
+main>article>article {
+    flex: 4;
+    margin: 0 5% 0 3%;
+}
+
+aside {
+    flex: 1;
+}
+
+aside>h2 {
+    width: 100%;
+}
+
+aside>img,
+aside>video {
+    width: 100%;
+    height: auto;
+    margin-top: 1%;
+}
+
+
+aside>audio {
+    flex-grow: 1;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+
+
+/* 0 0 1*/
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}

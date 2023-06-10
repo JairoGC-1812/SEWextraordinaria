@@ -1,0 +1,93 @@
+/* 
+=========================================================== 
+    Autor: Jairo García Castro - UO271449
+    Descripción de la hoja de estilo: 
+    Hoja que se encarga de la gestión de las características
+    generales de estilo: fuentes, colores, multimedia...
+===========================================================
+*/
+body > header{
+    background-color:rgb(91, 149, 197);
+    padding: 0%;
+}
+
+footer{
+    text-align: center;
+    font-size: larger;
+    background-color: rgb(91, 149, 197);
+    font-weight: bold;
+}
+
+aside{ 
+    background-color: rgb(91, 149, 197);
+}
+
+
+aside > h2{
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+/* 0 0 1*/
+body{    
+    text-align: justify;
+    background-color: rgb(117, 166, 206);
+    font-size: large;
+}
+dt{
+    font-weight: bold;
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+}
+
+h4{
+    text-align: center;
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+}
+h3 {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* 0 0 3*/
+table tr th{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+table tr th, td{
+    border: 0.05em solid ;
+    padding: 0.5em;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+main>section>button{
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
+    font-size: large;
+}
+
+main>section>img {
+    max-width: 50%;
+    height: auto;
+}
+
+
