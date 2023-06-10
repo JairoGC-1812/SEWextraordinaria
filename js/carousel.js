@@ -4,10 +4,9 @@ class Carousel {
             this.imgDict =
             {
                 "abastos_1.jpg": "Interior del mercado de abastos de Villaviciosa",
-                "molin_darriba.jpg": "Molín d'Arriba, junto al Ríu Profundu",
+                "molin_pena.jpg": "Molín La Peña, junto al Ríu Profundu",
                 "teatro_riera.jpg": "Fachada del Teatro Riera de Villaviciosa",
                 "villaviciosa_aerea.jpg": "Vista aérea de Villaviciosa",
-                "ateneo_pintura.jpg": "Cuadro pintado del Ateneo Obrero de Villaviciosa",
                 "exaltacion_manzana_1.jpg": "Escultura de la Exaltación a la Manzana, de Eduardo Úrculo",
                 "molin_perniles1.jpg": "Molín de Perniles, junto al Ríu Profundu",
                 "ateneo_1.jpg": "Fachada del Ateneo Obrero de Villaviciosa"

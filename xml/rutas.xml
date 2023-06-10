@@ -68,10 +68,10 @@
         <descripcion> El molín La Peña es el mejor conservado y más conocido de la ruta, con la cascada junto a la que se encuentra </descripcion>
         <coordenadas latitud="43.439629" longitud="-5.397353" altitud="145" />
         <imagenes>
-          <imagen> ./multimedia/molin_peña.jpg </imagen>
+          <imagen> ./multimedia/molin_pena.jpg </imagen>
         </imagenes>
         <videos>
-          <video> ./multimedia/molin_peña.mp4</video>
+          <video> ./multimedia/molin_pena.mp4</video>
         </videos>
       </hito>
 
