@@ -4,7 +4,7 @@ class Carousel {
             this.imgDict =
             {
                 "abastos_1.jpg": "Interior del mercado de abastos de Villaviciosa",
-                "molin_pena.jpg": "Molín La Peña, junto al Ríu Profundu",
+                "molin_pena.jpg": "Molín La Peña, junto al Ríu Profundu", 
                 "teatro_riera.jpg": "Fachada del Teatro Riera de Villaviciosa",
                 "villaviciosa_aerea.jpg": "Vista aérea de Villaviciosa",
                 "exaltacion_manzana_1.jpg": "Escultura de la Exaltación a la Manzana, de Eduardo Úrculo",
