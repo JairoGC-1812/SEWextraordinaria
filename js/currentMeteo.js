@@ -1,4 +1,4 @@
-class Meteo {
+class CurrentMeteo {
 
     constructor() {
         this.apikey = "caed756cd5eeb819fe6f21c852f860d1";
@@ -9,8 +9,7 @@ class Meteo {
         this.ciudad = "villaviciosa";
     }
 
-    loadJson() {
-
+    load() {
         let url = this.baseUrl;
         url += this.ciudad + this.tipo + this.unidades +
             this.idioma + "&APPID=" + this.apikey;
@@ -19,8 +18,8 @@ class Meteo {
             dataType: "json",
             url: url,
             method: 'GET',
-            success: function (datos) {
-                var content = "<section><h3>Meteorología</h3><img src=\"http://openweathermap.org/img/w/" +
+            success: function (data) {
+                let content = "<section><h3>Meteorología</h3><img src=\"http://openweathermap.org/img/w/" +
                     datos.weather[0].icon + ".png\" alt=\"Icono del tiempo\">" +
                     "<ul>" +
                     "<li>Tiempo: " + datos.weather[0].description + "</li>" +
@@ -29,8 +28,6 @@ class Meteo {
                     "<li>Temperatura máxima: " + datos.main.temp_max + "ºC</li>" +
                     "</ul></section>"
                 $("main>section:nth-of-type(3)").append(content);
-                console.log(datos.coord.lon);
-                console.log(datos.coord.lat);
             },
             error: function () {
                 $("main>section:nth-of-type(3)>section:last-of-type").after("<p>¡Tenemos problemas! No podemos obtener datos de meteorología de <a href='http://openweathermap.org'>OpenWeatherMap</a></p>");
@@ -39,5 +36,5 @@ class Meteo {
     }
 }
 
-var meteo = new Meteo();
-window.addEventListener('load', meteo.loadJson());
+let meteo = new CurrentMeteo();
+window.addEventListener('load', meteo.load());

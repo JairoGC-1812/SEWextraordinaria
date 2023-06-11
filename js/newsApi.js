@@ -6,8 +6,8 @@ class News {
     }
 
     showNews() {
-        var apiKey = "56cca78ee678da353dbdbd0c6182986f";
-        var url = "https://gnews.io/api/v4/search?q=";
+        let apiKey = "56cca78ee678da353dbdbd0c6182986f";
+        let url = "https://gnews.io/api/v4/search?q=";
         url += this.q;
         url += "&lang=" + this.lang;
         url += "&country=" + this.country;
@@ -18,7 +18,7 @@ class News {
             url: url,
             method: 'GET',
             success: function (data) {
-                var articles = data.articles;
+                let articles = data.articles;
 
                 for (let i = 0; i < articles.length; i++) {
                     let art = "<section>";
@@ -38,5 +38,5 @@ class News {
     }
 }
 
-var news = new News("villaviciosa asturias");
+let news = new News("villaviciosa asturias");
 news.showNews();
