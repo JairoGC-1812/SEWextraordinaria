@@ -18,7 +18,7 @@ class CurrentMeteo {
             dataType: "json",
             url: url,
             method: 'GET',
-            success: function (data) {
+            success: function (datos) {
                 let content = "<section><h3>Meteorología</h3><img src=\"http://openweathermap.org/img/w/" +
                     datos.weather[0].icon + ".png\" alt=\"Icono del tiempo\">" +
                     "<ul>" +

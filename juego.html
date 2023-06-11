@@ -8,55 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="author" content="Jairo García Castro - UO271449" />
-    <meta name="description"
-        content="Página principal del sitio web, donde se pueden observar fotos del concejo, información meteorológica, un mapa de situación y noticias" />
-    <meta name="keywords" content="Villaviciosa, tiempo, noticias, imágenes, turismo" />
+    <meta name="description" content="Pequeño juego de preguntas sobre el contenido del sitio web" />
+    <meta name="keywords" content="Villaviciosa, juego, test, quiz, preguntas" />
 
     <title>Villaviciosa Turismo</title>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/nav.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
     <header>
         <h1>Villaviciosa Turismo</h1>
         <nav>
-            <a href="index.html" class="active" title="Página de inicio" tabindex="1" accesskey="I">Inicio</a>
+            <a href="index.html" title="Página de inicio" tabindex="1" accesskey="I">Inicio</a>
             <a href="gastronomia.html" title="Gastronomía" tabindex="2" accesskey="G">Gastronomía</a>
             <a href="rutas.html" title="Rutas turísticas" tabindex="3" accesskey="R"> Rutas</a>
             <a href="meteorologia.html" title="Información meteorológica" tabindex="4" accesskey="M">Meteorología</a>
-            <a href="juego.html" title="Juego" tabindex="5" accesskey="J">Juego</a>
+            <a href="juego.html" class="active" title="Juego" tabindex="5" accesskey="J">Juego</a>
             <a href="reservas.php" title="Reserva de rutas" tabindex="6" accesskey="V">Reservas</a>
         </nav>
     </header>
     <main>
         <section>
-            <h2>Villaviciosa en fotos</h2>
-            <button type="button" onclick="carousel.prev()"> &lt; </button>
-            <img src="multimedia/abastos_1.jpg" alt=""/>
-            <button type="button" onclick="carousel.next()"> &gt; </button>
+            <h2>Test sobre Villaviciosa</h2>
+            <p>
+                En este pequeño juego de de preguntas tipo test podrás verificar si tus conocimientos de la Villa son
+                tan adecuados como este maravilloso concejo merece. Si descubres que no es el caso, ¡no te preocupes!,
+                encontrarás las respuestas a todas las preguntas en este mismo sitio web. ¡Suerte!
+            </p>
+            <input type="button" value="¡Comenzar!" onclick="quiz.start();"/>
         </section>
-
-        <section>
-            <h2>¿Dónde se encuentra Villaviciosa?</h2>
-        </section>
-
-        <section>
-            <h2>Noticias recientes</h2>
-        </section>
-
     </main>
 
     <footer>
         <p>Jairo García Castro - Software y Estándares para la Web 2022</p>
     </footer>
-    <script src="js/carousel.js"></script>
-    <script src="js/staticMap.js"></script>
-    <script src="js/newsApi.js"></script>
-    <script src="js/lastModified.js"></script>
-    <script src="js/currentMeteo.js"></script>
+    <script src="js/quiz.js"></script>
 </body>
 
 </html>

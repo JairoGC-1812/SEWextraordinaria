@@ -85,11 +85,6 @@ main>section>button{
     font-size: large;
 }
 
-main>section>img {
-    max-width: 50%;
-    height: auto;
-}
-
 main>section>section{
     border:solid;
     border-radius: 0.5em;
@@ -98,21 +93,40 @@ main>section>section{
     margin: 0.5em;
 }
 
-main>section:nth-of-type(3){
-    max-width: 80%;
-    margin-right: 10%;
-    margin-left: 10%;
-}
-
-main>section>section>img{
-    width: 30%;
-    height: auto;
-    margin-left: 35%;
-    margin-right: 35%;
-}
-
 main>section>section>dl{
     text-align: left;
 }
 
+main>section>p{
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
+input[type=button]{
+    background-color: rgb(203, 214, 53);
+    font-size: larger;
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+section > article p{
+    font-size: larger;
+}
+
+legend{
+    font-size: large;
+    text-align: left;
+}
+
+section > article > h3{
+    font-size: larger;
+    text-decoration: none;
+}
+
+section > article > h3 + p:only-of-type {
+    background-color:red;
+    font-weight: bold;
+    padding: 0.2em;
+    text-align: center;
+    width: fit-content;
+}

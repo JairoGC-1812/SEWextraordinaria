@@ -21,20 +21,29 @@ main>section>h2 {
 
 main>section>section{
     flex:1;
-
 }
-main>section{
+
+section, header, article{
     display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+section > article{
     flex-flow: row wrap;
     justify-content: center;
+    width: 80%;
 }
 
+fieldset{
+    width: 100%;
+    margin-bottom: 2%;
+}
+section > article > p{
+    width: 100%;
+}
 main>section>button{
     margin: auto 1% auto 1%;
-}
-main>article {
-    display: flex;
-    flex-flow: row wrap;
 }
 
 main>article>h2 {
@@ -80,4 +89,17 @@ nav {
 body{
     margin: 0;
     padding: 0;
+}
+
+main>section>section>ul{
+    width: 100%;
+}
+
+main>section>section>img{
+    width:30%;
+    height: auto;
+}
+
+h3{
+    width: 100%;
 }
