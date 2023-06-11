@@ -130,3 +130,7 @@ section > article > h3 + p:only-of-type {
     text-align: center;
     width: fit-content;
 }
+
+a{
+color: #000052;
+}
