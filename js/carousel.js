@@ -32,9 +32,9 @@ class Carousel {
         this.setImage();
     }
     setImage() {
-        var img = document.querySelector("button + img");
+        let img = document.querySelector("button + img");
         img.src = "multimedia/" + Object.keys(this.imgDict)[this.index];
         img.alt = Object.values(this.imgDict)[this.index];
     }
 }
-var carousel = new Carousel();
+let carousel = new Carousel();

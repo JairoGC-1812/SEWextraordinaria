@@ -18,6 +18,11 @@ footer {
 main>section>h2 {
     width: 100%;
 }
+
+main>section>section{
+    flex:1;
+
+}
 main>section{
     display: flex;
     flex-flow: row wrap;
