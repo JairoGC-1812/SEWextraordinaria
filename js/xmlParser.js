@@ -178,7 +178,7 @@ class XMLParser {
             for (let i = 1; i < $("aside").length + 1; i++) {
                 //Temporal pa probar en local ------------------------------------------------------------------------------------------
 
-                let src = "ruta" + i + ".kml";
+                let src = "js/ruta" + i + ".kml";
                 $.ajax({
                     dataType: "xml",
                     url: src,
