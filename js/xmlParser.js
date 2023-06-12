@@ -2,8 +2,6 @@ class XMLParser {
     constructor() {
         let url = "xml/rutas.xml";
 
-        //Temporal pa probar en local ------------------------------------------------------------------------------------------
-        url = "https://jairogc-1812.github.io/SEWextraordinaria/xml/rutas.xml"
         $.ajax({
             dataType: "xml",
             url: url,
@@ -79,14 +77,18 @@ class XMLParser {
             this.createSVG(rutas[i]);
 
             txt += "<section>";
-            txt += "<h4> Planimetría <h4>";
+            txt += "<h4> Planimetría </h4>";
+            txt += "<aside id=\"ruta" + (i + 1) + "\">";
+            txt += "</aside>";
             txt += "</section>";
 
             this.createKML(rutas[i]);
 
-            txt += "</article";
+            txt += "</article>";
             $("main").append(txt);
         }
+
+        this.initMap();
     }
 
     createSVG(ruta) {
@@ -133,8 +135,8 @@ class XMLParser {
         let kml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
         kml += "<kml xmlns=\"http://www.opengis.net/kml/2.2\">";
         kml += "<Document>";
-        kml +="<Placemark>";
-        kml += "<name>" + $(ruta).attr("nombre") +"</name>";
+        kml += "<Placemark>";
+        kml += "<name>" + $(ruta).attr("nombre") + "</name>";
         kml += "<LineString>";
         kml += "<extrude>1</extrude>";
         kml += "<tesellate>1</tesellate>";
@@ -147,7 +149,7 @@ class XMLParser {
 
         let hitos = $("hitos>hito", ruta);
 
-        for(let i = 0; i < hitos.length; i++){
+        for (let i = 0; i < hitos.length; i++) {
             coord = $("hito>coordenadas", hitos[i]);
             kml += $(coord).attr("longitud") + ",";
             kml += $(coord).attr("latitud") + ",";
@@ -163,11 +165,61 @@ class XMLParser {
         kml += "<width>5</width>";
         kml += "</LineStyle>";
         kml += "</Style>";
-        kml +="</Placemark>";
+        kml += "</Placemark>";
         kml += "</Document>";
         kml += "</kml>";
+    }
 
-        console.log(kml)
+    initMap() {
+        var script = document.createElement("script");
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXjk9mx9DWgzplUVXKroSbRdrewyo0uho&callback=initMap"
+        window.initMap = function () {
+            let maps = [];
+            for (let i = 1; i < $("aside").length + 1; i++) {
+                //Temporal pa probar en local ------------------------------------------------------------------------------------------
+
+                let src = "ruta" + i + ".kml";
+                $.ajax({
+                    dataType: "xml",
+                    url: src,
+                    method: 'GET',
+                    success: function (data) {
+                        let kml = $("Document>Placemark", data);
+                        let coordArray = $("LineString>coordinates", kml).text().split(" ");
+                        coordArray = coordArray.filter(x => x !== "");
+                        let path = [];
+                        for (let j = 0; j < coordArray.length; j++) {
+                            let lat = parseFloat(coordArray[j].split(",")[1]);
+                            let lng = parseFloat(coordArray[j].split(",")[0]);
+                            path[j] = {lat: lat, lng: lng};
+                        }
+                        maps[i - 1] = new google.maps.Map(document.getElementById("ruta" + i), {
+                            // center: { lat: 43.481320, lng: -5.433561 },
+                            center: path[parseInt(path.length / 2)],
+                            zoom: 10,
+                            mapTypeId: 'hybrid'
+                        });
+                        let route = new google.maps.Polyline({
+                            path: path,
+                            geodesic: true,
+                            strokeColor: $("Style>LineStyle>color", kml).text(),
+                            strokeWeight: $("Style>LineStyle>width", kml).text()
+                        });
+                        route.setMap(maps[i-1]);
+
+
+                        // let kmlLayer = new google.maps.KmlLayer(src, {
+                        //     suppressInfoWindows: true,
+                        //     preserveViewport: false,
+                        //     map: maps[i - 1]
+                        // });
+                    }
+
+                });
+            };
+        }
+
+        document.head.appendChild(script);
     }
 
 

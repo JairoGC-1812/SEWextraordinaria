@@ -57,17 +57,12 @@ main>article>article {
     margin: 0 5% 0 3%;
 }
 
-aside {
+article>aside {
     flex: 1;
 }
 
-aside>h2 {
+article>aside>h2 {
     width: 100%;
-}
-
-aside>img,
-aside>video {
-    margin-top: 1%;
 }
 
 
@@ -135,4 +130,9 @@ img, video{
     width: 100%;
     height: auto;
     margin-top: 1%;
+}
+
+section>aside{
+    height: 50vh;
+    width: 100%;
 }
