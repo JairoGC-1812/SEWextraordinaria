@@ -1,0 +1,8 @@
+<svg width="6400" height="190" viewbox="0 0 6400 180" transform="matrix(1,0,0,-1,0,0)">
+  <line x1="0" y1="34" x2="500" y2="31" style="stroke:#f00; stroke-width: 3; stroke-linecap: round;"/>
+  <line x1="500" y1="31" x2="1700" y2="54" style="stroke:#f00; stroke-width: 3; stroke-linecap: round;"/>
+  <line x1="1700" y1="54" x2="2200" y2="63" style="stroke:#f00; stroke-width: 3; stroke-linecap: round;"/>
+  <line x1="2200" y1="63" x2="3600" y2="102" style="stroke:#f00; stroke-width: 3; stroke-linecap: round;"/>
+  <line x1="3600" y1="102" x2="5400" y2="145" style="stroke:#f00; stroke-width: 3; stroke-linecap: round;"/>
+  <line x1="5400" y1="145" x2="6400" y2="180" style="stroke:#f00; stroke-width: 3; stroke-linecap: round;"/>
+</svg>

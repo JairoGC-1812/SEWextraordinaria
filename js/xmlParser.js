@@ -127,12 +127,47 @@ class XMLParser {
         }
 
         svg += "</svg>";
-
-        console.log(svg);
     }
 
-    createKML() {
+    createKML(ruta) {
+        let kml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+        kml += "<kml xmlns=\"http://www.opengis.net/kml/2.2\">";
+        kml += "<Document>";
+        kml +="<Placemark>";
+        kml += "<name>" + $(ruta).attr("nombre") +"</name>";
+        kml += "<LineString>";
+        kml += "<extrude>1</extrude>";
+        kml += "<tesellate>1</tesellate>";
+        kml += "<coordinates>";
 
+        let coord = $("ruta>coordenadas", ruta);
+        kml += $(coord).attr("longitud") + ",";
+        kml += $(coord).attr("latitud") + ",";
+        kml += $(coord).attr("altitud") + " ";
+
+        let hitos = $("hitos>hito", ruta);
+
+        for(let i = 0; i < hitos.length; i++){
+            coord = $("hito>coordenadas", hitos[i]);
+            kml += $(coord).attr("longitud") + ",";
+            kml += $(coord).attr("latitud") + ",";
+            kml += $(coord).attr("altitud") + " ";
+
+        }
+        kml += "</coordinates>";
+        kml += "<altitudeMode>clampToGround</altitudeMode>";
+        kml += "</LineString>";
+        kml += "<Style>";
+        kml += "<LineStyle>";
+        kml += "<color> #ff0000ff </color>";
+        kml += "<width>5</width>";
+        kml += "</LineStyle>";
+        kml += "</Style>";
+        kml +="</Placemark>";
+        kml += "</Document>";
+        kml += "</kml>";
+
+        console.log(kml)
     }
 
 

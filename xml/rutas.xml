@@ -83,8 +83,8 @@
         </imagenes>
       </hito>
     </hitos>
-    <planimetria>/js/ruta1.kml</planimetria>
-    <altimetria>/js/ruta1.svg</altimetria>
+    <planimetria>js/ruta1.kml</planimetria>
+    <altimetria>js/ruta1.svg</altimetria>
   </ruta>
   <ruta nombre="Ruta de Carlos V" dificultad="Media" transporte="Caballo">
     <tipos>
@@ -155,8 +155,8 @@
         </imagenes>
       </hito>
     </hitos>
-    <planimetria>/js/ruta2.kml</planimetria>
-    <altimetria>/js/ruta2.svg</altimetria>
+    <planimetria>js/ruta2.kml</planimetria>
+    <altimetria>js/ruta2.svg</altimetria>
   </ruta>
 
   <ruta nombre="Ruta urbana Villaviciosa" dificultad="Baja" transporte="A pie">
@@ -174,7 +174,7 @@
     <personas-adecuadas>Todas las edades</personas-adecuadas>
 
     <inicio lugar="Ayuntamiento" direccion="Plaza del Ayuntamiento, S/N, Villaviciosa, Asturias" />
-    <coordenadas latitud="43.461328" longitud="-5.438658" altitud="6" />
+    <coordenadas latitud="43.481320" longitud="-5.433561" altitud="6" />
 
     <referencias>
       <referencia> https://www.turismovillaviciosa.es/turismo/villaviciosa/ruta-historica-de-villaviciosa_2649_3_5503_0_1_in.html</referencia>
@@ -187,7 +187,7 @@
     <hitos>
       <hito nombre="Exaltación de la manzana" distancia-desde-anterior="150" unidades-de-distancia="m">
         <descripcion> Monumento en honor a José Cardín Fernández, creado por Eduardo Úrculo</descripcion>
-        <coordenadas latitud="43.460210" longitud="-5.434374" altitud="9" />
+        <coordenadas latitud="43.482120" longitud="-5.432506" altitud="9" />
         <imagenes>
           <imagen> multimedia/exaltacion_manzana_1.jpg </imagen>
           <imagen> multimedia/exaltacion_manzana_2.jpg </imagen>
@@ -237,7 +237,7 @@
         </imagenes>
       </hito>
     </hitos>
-    <planimetria>/js/ruta3.kml</planimetria>
-    <altimetria>/js/ruta3.svg</altimetria>
+    <planimetria>js/ruta3.kml</planimetria>
+    <altimetria>js/ruta3.svg</altimetria>
   </ruta>
 </rutas>

@@ -128,7 +128,9 @@ main>article>section>p{
     width: 100%;
     font-weight: normal;
 }
-
+main>section>img{
+    width: auto;
+}
 img, video{
     width: 100%;
     height: auto;

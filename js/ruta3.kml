@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+        <Placemark>
+            <name>Ruta urbana Villaviciosa</name>
+            <LineString>
+                <extrude>1</extrude>
+                <tesellate>1</tesellate>
+                <coordinates>-5.438658,43.461328,6 -5.434374,43.460210,9 -5.434271,43.481666,8
+                    -5.436343,43.481826,6 -5.435038,43.480061,8 -5.434361,43.478750,19
+                    -5.434233,43.480257,10 </coordinates>
+                <altitudeMode>clampToGround</altitudeMode>
+            </LineString>
+            <Style>
+                <LineStyle>
+                    <color> #ff0000ff </color>
+                    <width>5</width>
+                </LineStyle>
+            </Style>
+        </Placemark>
+    </Document>
+</kml>

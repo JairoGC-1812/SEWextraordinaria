@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+        <Placemark>
+            <name>Ruta los Molinos del Ríu Profundu</name>
+            <LineString>
+                <extrude>1</extrude>
+                <tesellate>1</tesellate>
+                <coordinates>-5.438658,43.461328,34 -5.434374,43.460210,31 -5.424323,43.456533,54
+                    -5.421454,43.452277,63 -5.408034,43.450349,102 -5.397353,43.439629,145
+                    -5.391802,43.433653,180 </coordinates>
+                <altitudeMode>clampToGround</altitudeMode>
+            </LineString>
+            <Style>
+                <LineStyle>
+                    <color> #ff0000ff </color>
+                    <width>5</width>
+                </LineStyle>
+            </Style>
+        </Placemark>
+    </Document>
+</kml>

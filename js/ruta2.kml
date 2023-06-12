@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+    <Document>
+        <Placemark>
+            <name>Ruta de Carlos V</name>
+            <LineString>
+                <extrude>1</extrude>
+                <tesellate>1</tesellate>
+                <coordinates>-5.399650,43.545177,0 -5.396329,43.534367,160 -5.406217,43.516857,50
+                    -5.440082,43.499473,55 -5.433572,43.481348,0 </coordinates>
+                <altitudeMode>clampToGround</altitudeMode>
+            </LineString>
+            <Style>
+                <LineStyle>
+                    <color> #ff0000ff </color>
+                    <width>5</width>
+                </LineStyle>
+            </Style>
+        </Placemark>
+    </Document>
+</kml>
