@@ -30,61 +30,61 @@
     <recomendacion> 8 </recomendacion>
 
     <hitos>
-      <hito nombre="Molín de Griselda" distancia-desde-anterior="0.5" unidades-de-distancia="km">
+      <hito nombre="Molín de Griselda" distancia-desde-anterior="500" unidades-de-distancia="m">
         <descripcion> Ruinas del Molín de Griselda, directamente visible desde el camino de la ruta</descripcion>
         <coordenadas latitud="43.460210" longitud="-5.434374" altitud="31" />
         <imagenes>
-          <imagen> ./multimedia/molin_griselda.jpg </imagen>
+          <imagen> multimedia/molin_griselda.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Molín de Villaverde" distancia-desde-anterior="1.2" unidades-de-distancia="km">
+      <hito nombre="Molín de Villaverde" distancia-desde-anterior="1200" unidades-de-distancia="m">
         <descripcion> Ruinas del Molín de Villaverde, un poco más alejado del camino de la ruta pero rodeado de precioso bosque autóctono</descripcion>
         <coordenadas latitud="43.456533" longitud="-5.424323" altitud="54" />
         <imagenes>
-          <imagen> ./multimedia/molin_villaverde.jpg </imagen>
+          <imagen> multimedia/molin_villaverde.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Molín el Pitu" distancia-desde-anterior="0.5" unidades-de-distancia="km">
+      <hito nombre="Molín el Pitu" distancia-desde-anterior="500" unidades-de-distancia="m">
         <descripcion> Ruinas del Molín El Pitu. Casi totalmente rodeadas de vegetación pero con un encanto especial. En su interior se puede observar la rueda original</descripcion>
         <coordenadas latitud="43.452277" longitud="-5.421454" altitud="63" />
         <imagenes>
-          <imagen> ./multimedia/molin_pitu1.jpg </imagen>
-          <imagen> ./multimedia/molin_pitu2.jpg </imagen>
+          <imagen> multimedia/molin_pitu1.jpg </imagen>
+          <imagen> multimedia/molin_pitu2.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Molín de Perniles" distancia-desde-anterior="1.4" unidades-de-distancia="km">
+      <hito nombre="Molín de Perniles" distancia-desde-anterior="1400" unidades-de-distancia="m">
         <descripcion>Ruinas del Molín de Perniles en un paraje ideal rodeado de vegetación y naturaleza. </descripcion>
         <coordenadas latitud="43.450349" longitud="-5.408034" altitud="102" />
         <imagenes>
-          <imagen> ./multimedia/molin_perniles1.jpg </imagen>
-          <imagen> ./multimedia/molin_perniles2.jpg </imagen>
+          <imagen> multimedia/molin_perniles1.jpg </imagen>
+          <imagen> multimedia/molin_perniles2.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Molín la Peña" distancia-desde-anterior="1.8" unidades-de-distancia="km">
+      <hito nombre="Molín la Peña" distancia-desde-anterior="1800" unidades-de-distancia="m">
         <descripcion> El molín La Peña es el mejor conservado y más conocido de la ruta, con la cascada junto a la que se encuentra </descripcion>
         <coordenadas latitud="43.439629" longitud="-5.397353" altitud="145" />
         <imagenes>
-          <imagen> ./multimedia/molin_pena.jpg </imagen>
+          <imagen> multimedia/molin_pena.jpg </imagen>
         </imagenes>
         <videos>
-          <video> ./multimedia/molin_pena.mp4</video>
+          <video> multimedia/molin_pena.mp4</video>
         </videos>
       </hito>
 
-      <hito nombre="Molín d'Arriba" distancia-desde-anterior="1.0" unidades-de-distancia="km">
+      <hito nombre="Molín d'Arriba" distancia-desde-anterior="1000" unidades-de-distancia="m">
         <descripcion> El molín d'Arriba es el último de esta ruta y otro de los que mejor se conserva. Se encuentra cerca de la aldea de Busllaz. </descripcion>
         <coordenadas latitud="43.433653" longitud="-5.391802" altitud="180" />
         <imagenes>
-          <imagen> ./multimedia/darriba.jpg </imagen>
+          <imagen> multimedia/molin_darriba.jpg </imagen>
         </imagenes>
       </hito>
     </hitos>
-    <planimetria></planimetria>
-    <altimetria></altimetria>
+    <planimetria>/js/ruta1.kml</planimetria>
+    <altimetria>/js/ruta1.svg</altimetria>
   </ruta>
   <ruta nombre="Ruta de Carlos V" dificultad="Media" transporte="Caballo">
     <tipos>
@@ -114,49 +114,49 @@
     <recomendacion> 9 </recomendacion>
 
     <hitos>
-      <hito nombre="Lliñeru" distancia-desde-anterior="2.2" unidades-de-distancia="km">
+      <hito nombre="Lliñeru" distancia-desde-anterior="2200" unidades-de-distancia="m">
         <descripcion>Preciosa pequeña aldea de aproximadamente 60 habitantes rodeada de las típicas pumaradas</descripcion>
         <coordenadas latitud="43.534367" longitud="-5.396329" altitud="160" />
         <imagenes>
-          <imagen> ./multimedia/llineru_pumarada.jpg </imagen>
-          <imagen> ./multimedia/ria_llineru.jpg </imagen>
+          <imagen> multimedia/llineru_pumarada.jpg </imagen>
+          <imagen> multimedia/ria_llineru.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Samartín del Mar" distancia-desde-anterior="2.3" unidades-de-distancia="km">
+      <hito nombre="Samartín del Mar" distancia-desde-anterior="2200" unidades-de-distancia="m">
         <descripcion> Capital de la parroquia homónima, con vistas a la vega de la ría de Villaviciosa  </descripcion>
         <coordenadas latitud="43.516857" longitud="-5.406217" altitud="50" />
         <imagenes>
-          <imagen> ./multimedia/iglesia_samartin.jpg </imagen>
+          <imagen> multimedia/iglesia_samartin.jpg </imagen>
         </imagenes>
         <videos>
-          <video> ./multimedia/vista_aerea_samartin.mp4</video>
+          <video> multimedia/vista_aerea_samartin.mp4</video>
         </videos>
       </hito>
 
-      <hito nombre="Bedriñana" distancia-desde-anterior="4.1" unidades-de-distancia="km">
+      <hito nombre="Bedriñana" distancia-desde-anterior="4100" unidades-de-distancia="m">
         <descripcion> Desde esta aldea tan guapa casi se puede atisbar el famoso llagar de Sidra el Gaitero </descripcion>
         <coordenadas latitud="43.499473" longitud="-5.440082" altitud="55" />
         <imagenes>
-          <imagen> ./multimedia/iglesia_bedrinana.jpg </imagen>
+          <imagen> multimedia/iglesia_bedrinana.jpg </imagen>
         </imagenes>
         <videos>
-          <video> ./multimedia/vista_aerea_bedrinana.mp4</video>
+          <video> multimedia/vista_aerea_bedrinana.mp4</video>
         </videos>
       </hito>
 
-      <hito nombre="Villaviciosa" distancia-desde-anterior="2.8" unidades-de-distancia="km">
+      <hito nombre="Villaviciosa" distancia-desde-anterior="2800" unidades-de-distancia="m">
         <descripcion> Llegamos a "La Villa", capital maliaya con enorme valor cultural, histórico y estético </descripcion>
         <coordenadas latitud="43.481348" longitud="-5.433572" altitud="0" />
         <imagenes>
-          <imagen> ./multimedia/villaviciosa_aerea.jpg </imagen>
-          <imagen> ./multimedia/villaviciosa_ayuntamiento.jpg </imagen>
-          <imagen> ./multimedia/villaviciosa_sidra.jpg </imagen>
+          <imagen> multimedia/villaviciosa_aerea.jpg </imagen>
+          <imagen> multimedia/villaviciosa_ayuntamiento.jpg </imagen>
+          <imagen> multimedia/villaviciosa_sidra.jpg </imagen>
         </imagenes>
       </hito>
     </hitos>
-    <planimetria></planimetria>
-    <altimetria></altimetria>
+    <planimetria>/js/ruta2.kml</planimetria>
+    <altimetria>/js/ruta2.svg</altimetria>
   </ruta>
 
   <ruta nombre="Ruta urbana Villaviciosa" dificultad="Baja" transporte="A pie">
@@ -165,7 +165,7 @@
       <tipo> Arquitectónica </tipo>
       <tipo> Histórica </tipo>
     </tipos>
-    <tiempo duracion="1h"/>
+    <tiempo duracion="1 hora"/>
 
     <agencia> Sin agencia</agencia>
 
@@ -189,8 +189,8 @@
         <descripcion> Monumento en honor a José Cardín Fernández, creado por Eduardo Úrculo</descripcion>
         <coordenadas latitud="43.460210" longitud="-5.434374" altitud="9" />
         <imagenes>
-          <imagen> ./multimedia/exaltacion_manzana_1.jpg </imagen>
-          <imagen> ./multimedia/exaltacion_manzana_2.jpg </imagen>
+          <imagen> multimedia/exaltacion_manzana_1.jpg </imagen>
+          <imagen> multimedia/exaltacion_manzana_2.jpg </imagen>
         </imagenes>
       </hito>
 
@@ -198,8 +198,8 @@
         <descripcion> Edificio de la asociación sin ánimo de lucro homónima, dedicada a el ocio y recreo desde hace más de 100 años</descripcion>
         <coordenadas latitud="43.481666" longitud="-5.434271" altitud="8" />
         <imagenes>
-          <imagen> ./multimedia/ateneo_1.jpg </imagen>
-          <imagen> ./multimedia/ateneo_pintura.jpg </imagen>
+          <imagen> multimedia/ateneo_1.jpg </imagen>
+          <imagen> multimedia/ateneo_pintura.jpg </imagen>
         </imagenes>
       </hito>
 
@@ -207,7 +207,7 @@
         <descripcion> Inaugurado a mediados de los 40, el teatro riera es, desde entonces, uno de los principales foros culturales del concejo. En él, se organizan exposiciones, festivales, proyecciones...</descripcion>
         <coordenadas latitud="43.481826" longitud="-5.436343" altitud="6" />
         <imagenes>
-          <imagen> ./multimedia/teatro_riera.jpg </imagen>
+          <imagen> multimedia/teatro_riera.jpg </imagen>
         </imagenes>
       </hito>
 
@@ -215,8 +215,8 @@
         <descripcion>Restos de la antigua muralla que rodeaba la villa </descripcion>
         <coordenadas latitud="43.480061" longitud="-5.435038" altitud="8" />
         <imagenes>
-          <imagen> ./multimedia/muralla1.jpg </imagen>
-          <imagen> ./multimedia/muralla2.jpg </imagen>
+          <imagen> multimedia/muralla1.jpg </imagen>
+          <imagen> multimedia/muralla2.jpg </imagen>
         </imagenes>
       </hito>
 
@@ -224,7 +224,7 @@
         <descripcion> Monasterio de la Purísima concepción, perteneciente a la Orden de las Clarisas </descripcion>
         <coordenadas latitud="43.478750" longitud="-5.434361" altitud="19" />
         <imagenes>
-          <imagen> ./multimedia/monasterio_clarisas.jpg </imagen>
+          <imagen> multimedia/monasterio_clarisas.jpg </imagen>
         </imagenes>
       </hito>
 
@@ -232,12 +232,12 @@
         <descripcion> Elemento central de Villaviciosa, diseñado con arquitectura de hierro por Miguel de la Guardia. Alberga una decena de locales con diversos productos </descripcion>
         <coordenadas latitud="43.480257" longitud="-5.434233" altitud="10" />
         <imagenes>
-          <imagen> ./multimedia/abastos_1.jpg </imagen>
-          <imagen> ./multimedia/abastos_2.jpg </imagen>
+          <imagen> multimedia/abastos_1.jpg </imagen>
+          <imagen> multimedia/abastos_2.jpg </imagen>
         </imagenes>
       </hito>
     </hitos>
-    <planimetria></planimetria>
-    <altimetria></altimetria>
+    <planimetria>/js/ruta3.kml</planimetria>
+    <altimetria>/js/ruta3.svg</altimetria>
   </ruta>
 </rutas>

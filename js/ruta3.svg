@@ -1,0 +1,13 @@
+<svg width="1060" height="29" viewbox="0 0 1060 19" transform="matrix(1,0,0,-1,0,0)">
+    <line x1="0" y1="6" x2="150" y2="9" style="stroke:#f00; stroke-width: 3; stroke-linecap: round;" />
+    <line x1="150" y1="9" x2="360" y2="8"
+        style="stroke:#f00; stroke-width: 3; stroke-linecap: round;" />
+    <line x1="360" y1="8" x2="560" y2="6"
+        style="stroke:#f00; stroke-width: 3; stroke-linecap: round;" />
+    <line x1="560" y1="6" x2="810" y2="8"
+        style="stroke:#f00; stroke-width: 3; stroke-linecap: round;" />
+    <line x1="810" y1="8" x2="910" y2="19"
+        style="stroke:#f00; stroke-width: 3; stroke-linecap: round;" />
+    <line x1="910" y1="19" x2="1060" y2="10"
+        style="stroke:#f00; stroke-width: 3; stroke-linecap: round;" />
+</svg>

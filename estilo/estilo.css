@@ -45,10 +45,7 @@ h1{
     font-weight: bold;
 }
 
-h4{
-    text-align: center;
-    font-weight: bold;
-}
+
 h2{
     text-align: center;
     font-weight: bold;
@@ -58,6 +55,10 @@ h3 {
     text-align: center;
     font-weight: bold;
     text-decoration: underline;
+}
+
+h4,h5{
+    text-align: center;
 }
 
 
@@ -133,4 +134,14 @@ section > article > h3 + p:only-of-type {
 
 a{
 color: #000052;
+word-wrap: break-word;
+}
+
+main>article>section>dl:last-of-type>dd{
+    display: list-item;
+    list-style-type: disc;
+}
+
+main>article>p{
+    max-width: 80%;
 }
