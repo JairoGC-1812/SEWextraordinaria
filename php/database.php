@@ -47,7 +47,8 @@ class Database
             nombre VARCHAR(255) NOT NULL,
             apellidos VARCHAR(255) NOT NULL,
             pswd VARCHAR(255) NOT NULL,
-            PRIMARY KEY(id)
+            PRIMARY KEY(id),
+            UNIQUE(usuario)
             )";
         $resourceTable = "CREATE TABLE IF NOT EXISTS Recurso(
             id INT NOT NULL AUTO_INCREMENT,
@@ -163,6 +164,7 @@ class Database
             $statement->execute();
             $statement->close();
         }
+        $db->close();
 
     }
     private function populateResources()
@@ -183,6 +185,7 @@ class Database
             $statement->execute();
             $statement->close();
         }
+        $db->close();
 
     }
 
@@ -205,6 +208,7 @@ class Database
             $statement->close();
         }
 
+        $db->close();
     }
 
     private function populateAvailability()
@@ -224,6 +228,7 @@ class Database
             $statement->execute();
             $statement->close();
         }
+        $db->close();
 
     }
 
@@ -246,6 +251,7 @@ class Database
             $statement->execute();
             $statement->close();
         }
+        $db->close();
 
     }
 
@@ -266,6 +272,7 @@ class Database
             $statement->execute();
             $statement->close();
         }
+        $db->close();
 
     }
 
@@ -284,6 +291,20 @@ class Database
             $statement->execute();
             $statement->close();
         }
+        $db->close();
+    }
+
+    public function login($user, $passwd){
+        $db = $this->openConnection();
+
+        $query = $db->prepare("SELECT id FROM Usuario WHERE usuario=? AND passwd=?");
+        $query->bind_param('ss', $user, $passwd);
+        $query->execute();
+        
+        $id = $query->get_result()->fetch_assoc()['id'];
+        $db->close();
+
+        return $id;
     }
 }
 ?>

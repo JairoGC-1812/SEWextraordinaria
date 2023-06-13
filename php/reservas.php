@@ -32,7 +32,8 @@
     <main>
         <?php
         require 'database.php';
-        $x = new Database();
+        $db = new Database();
+        require 'login.php';
         ?>
     </main>
 
