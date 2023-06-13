@@ -78,7 +78,7 @@ class XMLParser {
 
             txt += "<section>";
             txt += "<h4> Planimetría </h4>";
-            txt += "<aside id=\"ruta" + (i + 1) + "\">";
+            txt += "<aside title=\"ruta" + (i + 1) + "\">";
             txt += "</aside>";
             txt += "</section>";
 
@@ -176,7 +176,6 @@ class XMLParser {
         window.initMap = function () {
             let maps = [];
             for (let i = 1; i < $("aside").length + 1; i++) {
-                //Temporal pa probar en local ------------------------------------------------------------------------------------------
 
                 let src = "js/ruta" + i + ".kml";
                 $.ajax({
@@ -193,8 +192,8 @@ class XMLParser {
                             let lng = parseFloat(coordArray[j].split(",")[0]);
                             path[j] = {lat: lat, lng: lng};
                         }
-                        maps[i - 1] = new google.maps.Map(document.getElementById("ruta" + i), {
-                            // center: { lat: 43.481320, lng: -5.433561 },
+//-------------------------------REVISAR---------------------------------------------------                        
+                        maps[i - 1] = new google.maps.Map($("aside[title=\"ruta" + i + "\"]"), {
                             center: path[parseInt(path.length / 2)],
                             zoom: 10,
                             mapTypeId: 'hybrid'
@@ -206,13 +205,6 @@ class XMLParser {
                             strokeWeight: $("Style>LineStyle>width", kml).text()
                         });
                         route.setMap(maps[i-1]);
-
-
-                        // let kmlLayer = new google.maps.KmlLayer(src, {
-                        //     suppressInfoWindows: true,
-                        //     preserveViewport: false,
-                        //     map: maps[i - 1]
-                        // });
                     }
 
                 });
