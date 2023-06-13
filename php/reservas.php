@@ -31,8 +31,13 @@
     </header>
     <main>
         <?php
-        require 'database.php';
+        require_once('database.php');
         $db = new Database();
+        session_start();
+        
+        if(isset($_SESSION['user_id'])){
+            echo "<p> LOGIN EXITOSO </p>";
+        }
         require 'login.php';
         ?>
     </main>

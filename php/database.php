@@ -150,6 +150,13 @@ class Database
     {
         $db = $this->openConnection();
 
+        if ($res = $db->query("Select * FROM Usuario")) {
+            if (count($res->fetch_all()) > 0) {
+                $db->close();
+                return;
+            }
+
+        }
         $csv = fopen("usuarios.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -158,7 +165,7 @@ class Database
             $nombre = $col[1];
             $apellidos = $col[2];
             $pswd = $col[3];
-            
+
             $statement = $db->prepare("INSERT INTO Usuario (usuario, nombre, apellidos, pswd) VALUES (?,?,?,?)");
             $statement->bind_param('ssss', $usuario, $nombre, $apellidos, $pswd);
             $statement->execute();
@@ -171,6 +178,13 @@ class Database
     {
         $db = $this->openConnection();
 
+        if ($res = $db->query("Select * FROM Recurso")) {
+            if (count($res->fetch_all()) > 0) {
+                $db->close();
+                return;
+            }
+
+        }
         $csv = fopen("recursos.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -179,7 +193,7 @@ class Database
             $descripcion = $col[1];
             $max_ocupacion = $col[2];
             $precio = $col[3];
-            
+
             $statement = $db->prepare("INSERT INTO Recurso (nombre, descripcion, max_ocupacion, precio) VALUES (?,?,?,?)");
             $statement->bind_param('ssid', $nombre, $descripcion, $max_ocupacion, $precio);
             $statement->execute();
@@ -193,6 +207,14 @@ class Database
     {
         $db = $this->openConnection();
 
+        if ($res = $db->query("Select * FROM Evento")) {
+            if (count($res->fetch_all()) > 0) {
+                $db->close();
+                return;
+            }
+
+        }
+
         $csv = fopen("eventos.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -201,7 +223,7 @@ class Database
             $fecha = $col[1];
             $nombre = $col[2];
             $descripcion = $col[3];
-            
+
             $statement = $db->prepare("INSERT INTO Evento (id_recurso, fecha, nombre, descripcion) VALUES (?,?,?,?)");
             $statement->bind_param('isss', $id_recurso, $fecha, $nombre, $descripcion);
             $statement->execute();
@@ -215,6 +237,14 @@ class Database
     {
         $db = $this->openConnection();
 
+        if ($res = $db->query("Select * FROM DisponibilidadHoraria")) {
+            if (count($res->fetch_all()) > 0) {
+                $db->close();
+                return;
+            }
+
+        }
+
         $csv = fopen("disponibilidadHoraria.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -222,7 +252,7 @@ class Database
             $id_recurso = $col[0];
             $hora_apertura = $col[1];
             $hora_cierre = $col[2];
-            
+
             $statement = $db->prepare("INSERT INTO DisponibilidadHoraria (id_recurso, hora_apertura, hora_cierre) VALUES (?,?,?)");
             $statement->bind_param('iss', $id_recurso, $hora_apertura, $hora_cierre);
             $statement->execute();
@@ -236,6 +266,14 @@ class Database
     {
         $db = $this->openConnection();
 
+        if ($res = $db->query("Select * FROM Reserva")) {
+            if (count($res->fetch_all()) > 0) {
+                $db->close();
+                return;
+            }
+
+        }
+
         $csv = fopen("reservas.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -245,7 +283,7 @@ class Database
             $id_recurso = ($col[2] == "NULL") ? null : $col[2];
             $num_personas = $col[3];
             $fecha = $col[4];
-            
+
             $statement = $db->prepare("INSERT INTO Reserva (id_usuario, id_evento, id_recurso, num_personas, fecha) VALUES (?,?,?,?,?)");
             $statement->bind_param('iiiis', $id_usuario, $id_evento, $id_recurso, $num_personas, $fecha);
             $statement->execute();
@@ -259,6 +297,14 @@ class Database
     {
         $db = $this->openConnection();
 
+        if ($res = $db->query("Select * FROM Ruta")) {
+            if (count($res->fetch_all()) > 0) {
+                $db->close();
+                return;
+            }
+
+        }
+
         $csv = fopen("rutas.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -266,7 +312,7 @@ class Database
             $id = $col[0];
             $transporte = $col[1];
             $duracion = $col[2];
-            
+
             $statement = $db->prepare("INSERT INTO Ruta (id, transporte, duracion) VALUES (?,?,?)");
             $statement->bind_param('isi', $id, $transporte, $duracion);
             $statement->execute();
@@ -276,8 +322,18 @@ class Database
 
     }
 
-    private function populateRestaurants(){
+    private function populateRestaurants()
+    {
+
         $db = $this->openConnection();
+
+        if ($res = $db->query("Select * FROM Restaurante")) {
+            if (count($res->fetch_all()) > 0) {
+                $db->close();
+                return;
+            }
+
+        }
 
         $csv = fopen("restaurantes.csv", "r");
 
@@ -285,23 +341,25 @@ class Database
 
             $id = $col[0];
             $menu = $col[1];
-            
+
             $statement = $db->prepare("INSERT INTO Restaurante (id, menu) VALUES (?,?)");
-            $statement->bind_param('is', $id, $menu,);
+            $statement->bind_param('is', $id, $menu, );
             $statement->execute();
             $statement->close();
         }
         $db->close();
     }
 
-    public function login($user, $passwd){
+    public function login($user, $passwd)
+    {
         $db = $this->openConnection();
 
-        $query = $db->prepare("SELECT id FROM Usuario WHERE usuario=? AND passwd=?");
+        $query = $db->prepare("SELECT id FROM Usuario WHERE usuario=? AND pswd=?");
         $query->bind_param('ss', $user, $passwd);
         $query->execute();
-        
-        $id = $query->get_result()->fetch_assoc()['id'];
+
+        $res = $query->get_result()->fetch_assoc();
+        $id = ($res == null) ? null : $res['id'];
         $db->close();
 
         return $id;

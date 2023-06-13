@@ -14,7 +14,7 @@
                 <form method='post' action='#'>
                     <label for='user'> Usuario: </label>
                     <input type='text' name='user' id='user'/>
-                    <label for='passwd' Contraseña:</label>
+                    <label for='passwd'> Contraseña:</label>
                     <input type='password' name='passwd' id='passwd'/>
                     <input type='submit' value='Iniciar sesión'/>
                 </form>
@@ -24,18 +24,15 @@
 
         public function login(){
             $userId = $this->db->login($_POST['user'], $_POST['passwd']);
-            if($userId == null){
-                $this->showLogin();
-            }else{
+            if(isset($userId)){
                 $_SESSION['user_id'] = $userId;
             }
         }
     }
     $login = new Login($db);
-    session_start();
 
     if(!isset($_SESSION['user_id'])){ //Si el usuario no está logeado, imprimimos el formulario de login
-        $loginshowLogin();
+        $login->showLogin();
     }
     if(isset($_POST['user']) && isset($_POST['passwd'])){
         $login->login();
