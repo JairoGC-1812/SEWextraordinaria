@@ -354,7 +354,7 @@ class Database
     {
         $db = $this->openConnection();
 
-        $query = $db->prepare("SELECT id FROM Usuario WHERE usuario=? AND pswd=?");
+        $query = $db->prepare("SELECT * FROM Usuario WHERE usuario=? AND pswd=?");
         $query->bind_param('ss', $user, $passwd);
         $query->execute();
 

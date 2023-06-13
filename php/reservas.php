@@ -26,26 +26,38 @@
             <a href="rutas.html" title="Rutas turísticas" tabindex="3" accesskey="R"> Rutas</a>
             <a href="meteorologia.html" title="Información meteorológica" tabindex="4" accesskey="M">Meteorología</a>
             <a href="juego.html" title="Juego" tabindex="5" accesskey="J">Juego</a>
-            <a href="reservas.php" class="active" title="Reserva de rutas" tabindex="6" accesskey="V">Reservas</a>
+            <a href="php/reservas.php" class="active" title="Reserva de rutas" tabindex="6" accesskey="V">Reservas</a>
         </nav>
     </header>
     <main>
         <?php
         require_once('database.php');
+        class Reservas
+        {
+            private $db;
+            public function __construct($db)
+            {
+                $this->db = $db;
+                if(!isset($_SESSION['user_id'])){
+                    $this->showNoLoginMessage();
+                }
+            }
+
+            public function showNoLoginMessage(){
+                echo "<section>
+                <h2> ¡Necesitas <a href='login.php'>iniciar sesión</a> para consultar esta página! <h2>
+                </section>";
+            }
+        }
         $db = new Database();
         session_start();
-        
-        if(isset($_SESSION['user_id'])){
-            echo "<p> LOGIN EXITOSO </p>";
-        }
-        require 'login.php';
+        $reservas = new Reservas($db);
         ?>
     </main>
 
     <footer>
         <p>Jairo García Castro - Software y Estándares para la Web 2022</p>
     </footer>
-    <script src="js/meteoForecast.js"></script>
 </body>
 
 </html>
