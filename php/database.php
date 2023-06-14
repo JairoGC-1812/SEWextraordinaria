@@ -379,15 +379,15 @@ class Database
         $restaurante = $this->findById("Restaurante", $id);
 
         if (isset($ruta)) {
-            $query = "SELECT recurso.id, recurso.nombre, recurso.descripcion, recurso.max_ocupacion, recurso.precio, ruta.transporte, ruta.duracion
-            FROM recurso, ruta
-            where (recurso.id = ruta.id) AND recurso.id = ?";
+            $query = "SELECT Recurso.id, Recurso.nombre, Recurso.descripcion, Recurso.max_ocupacion, Recurso.precio, Ruta.transporte, Ruta.duracion
+            FROM Recurso, Ruta
+            where (Recurso.id = Ruta.id) AND Recurso.id = ?";
         } else if (isset($restaurante)) {
-            $query = "SELECT recurso.id, recurso.nombre, recurso.descripcion, recurso.max_ocupacion, recurso.precio, restaurante.menu
-            FROM recurso, restaurante
-            where (recurso.id = restaurante.id) AND recurso.id = ?";
+            $query = "SELECT Recurso.id, Recurso.nombre, Recurso.descripcion, Recurso.max_ocupacion, Recurso.precio, Restaurante.menu
+            FROM Recurso, Restaurante
+            where (Recurso.id = Restaurante.id) AND Recurso.id = ?";
         } else {
-            $query = "SELECT * from recurso where id = ?";
+            $query = "SELECT * from Recurso where id = ?";
         }
 
         $query = $db->prepare($query);
