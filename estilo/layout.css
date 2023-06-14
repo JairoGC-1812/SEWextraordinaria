@@ -124,12 +124,17 @@ main>article>section>p{
     font-weight: normal;
 }
 main>section>img{
-    width: auto;
+    max-width: 80%;
 }
-img, video{
+aside>img, aside>video{
     width: 100%;
     height: auto;
     margin-top: 1%;
+}
+
+img, video{
+    height: auto;
+    max-width: 100%;
 }
 
 section>aside{

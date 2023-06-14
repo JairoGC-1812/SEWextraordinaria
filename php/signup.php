@@ -41,7 +41,7 @@
     </header>
     <main>
         <?php
-        $login->respond("login");
+        $login->respond("signup");
         ?>
     </main>
 

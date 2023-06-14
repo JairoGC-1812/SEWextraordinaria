@@ -60,16 +60,6 @@ class Database
             CHECK (max_ocupacion > 0),
             CHECK (precio >= 0)
             )";
-        $eventTable = "CREATE TABLE IF NOT EXISTS Evento(
-            id INT NOT NULL AUTO_INCREMENT,
-            id_recurso INT NOT NULL,
-            fecha DATETIME NOT NULL,
-            nombre VARCHAR(255) NOT NULL,
-            descripcion LONGTEXT NOT NULL,
-            PRIMARY KEY(id),
-            CONSTRAINT recurso_fecha UNIQUE(id_recurso, fecha),
-            FOREIGN KEY(id_recurso) REFERENCES Recurso(id)
-            )";
         $availabilityTable = "CREATE TABLE IF NOT EXISTS DisponibilidadHoraria(
             id INT NOT NULL AUTO_INCREMENT,
             id_recurso INT UNIQUE REFERENCES Recurso(id),
@@ -81,18 +71,12 @@ class Database
         $bookTable = "CREATE TABLE IF NOT EXISTS Reserva(
             id INT AUTO_INCREMENT,
             id_usuario INT NOT NULL,
-            id_evento INT,
-            id_recurso INT,
+            id_recurso INT NOT NULL,
             num_personas INT NOT NULL,
             fecha DATETIME NOT NULL,
             PRIMARY KEY(id),
             FOREIGN KEY(id_usuario) REFERENCES Usuario(id),
-            FOREIGN KEY(id_evento) REFERENCES Evento(id),
-            FOREIGN KEY(id_recurso) REFERENCES Recurso(id),
-            CHECK (
-                (id_evento IS NOT NULL) OR (id_recurso IS NOT NULL)
-                AND NOT (id_evento IS NOT NULL AND id_recurso IS NOT NULL)
-                    )
+            FOREIGN KEY(id_recurso) REFERENCES Recurso(id)
             )";
         $routeTable = "CREATE TABLE IF NOT EXISTS Ruta(
             id INT NOT NULL,
@@ -113,9 +97,6 @@ class Database
         }
         if (!($db->query($resourceTable) === TRUE)) {
             echo "<h2>Error en la creación de la tabla Recurso: " . $db->error . "</h2>";
-        }
-        if (!($db->query($eventTable) === TRUE)) {
-            echo "<h2>Error en la creación de la tabla Evento: " . $db->error . "</h2>";
         }
         if (!($db->query($availabilityTable) === TRUE)) {
             echo "<h2>Error en la creación de la tabla DisponibilidadHoraria: " . $db->error . "</h2>";
@@ -139,7 +120,6 @@ class Database
     {
         $this->populateUsers();
         $this->populateResources();
-        $this->populateEvents();
         $this->populateAvailability();
         $this->populateBookings();
         $this->populateRoutes();
@@ -150,13 +130,12 @@ class Database
     {
         $db = $this->openConnection();
 
-        if ($res = $db->query("Select * FROM Usuario")) {
-            if (count($res->fetch_all()) > 0) {
-                $db->close();
-                return;
-            }
-
+        $res = $db->query("Select COUNT(*) as total FROM Usuario");
+        if ($res->fetch_assoc()['total'] > 0) {
+            $db->close();
+            return;
         }
+
         $csv = fopen("usuarios.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -178,13 +157,13 @@ class Database
     {
         $db = $this->openConnection();
 
-        if ($res = $db->query("Select * FROM Recurso")) {
-            if (count($res->fetch_all()) > 0) {
-                $db->close();
-                return;
-            }
 
+        $res = $db->query("Select COUNT(*) as total FROM Recurso");
+        if ($res->fetch_assoc()['total'] > 0) {
+            $db->close();
+            return;
         }
+
         $csv = fopen("recursos.csv", "r");
 
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
@@ -203,46 +182,15 @@ class Database
 
     }
 
-    private function populateEvents()
-    {
-        $db = $this->openConnection();
-
-        if ($res = $db->query("Select * FROM Evento")) {
-            if (count($res->fetch_all()) > 0) {
-                $db->close();
-                return;
-            }
-
-        }
-
-        $csv = fopen("eventos.csv", "r");
-
-        while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
-
-            $id_recurso = $col[0];
-            $fecha = $col[1];
-            $nombre = $col[2];
-            $descripcion = $col[3];
-
-            $statement = $db->prepare("INSERT INTO Evento (id_recurso, fecha, nombre, descripcion) VALUES (?,?,?,?)");
-            $statement->bind_param('isss', $id_recurso, $fecha, $nombre, $descripcion);
-            $statement->execute();
-            $statement->close();
-        }
-
-        $db->close();
-    }
-
     private function populateAvailability()
     {
         $db = $this->openConnection();
 
-        if ($res = $db->query("Select * FROM DisponibilidadHoraria")) {
-            if (count($res->fetch_all()) > 0) {
-                $db->close();
-                return;
-            }
 
+        $res = $db->query("Select COUNT(*) as total FROM DisponibilidadHoraria");
+        if ($res->fetch_assoc()['total'] > 0) {
+            $db->close();
+            return;
         }
 
         $csv = fopen("disponibilidadHoraria.csv", "r");
@@ -265,13 +213,10 @@ class Database
     private function populateBookings()
     {
         $db = $this->openConnection();
-
-        if ($res = $db->query("Select * FROM Reserva")) {
-            if (count($res->fetch_all()) > 0) {
-                $db->close();
-                return;
-            }
-
+        $res = $db->query("Select COUNT(*) as total FROM Reserva");
+        if ($res->fetch_assoc()['total'] > 0) {
+            $db->close();
+            return;
         }
 
         $csv = fopen("reservas.csv", "r");
@@ -279,13 +224,12 @@ class Database
         while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
 
             $id_usuario = $col[0];
-            $id_evento = ($col[1] == "NULL") ? null : $col[1];
-            $id_recurso = ($col[2] == "NULL") ? null : $col[2];
-            $num_personas = $col[3];
-            $fecha = $col[4];
+            $id_recurso = $col[1];
+            $num_personas = $col[2];
+            $fecha = $col[3];
 
-            $statement = $db->prepare("INSERT INTO Reserva (id_usuario, id_evento, id_recurso, num_personas, fecha) VALUES (?,?,?,?,?)");
-            $statement->bind_param('iiiis', $id_usuario, $id_evento, $id_recurso, $num_personas, $fecha);
+            $statement = $db->prepare("INSERT INTO Reserva (id_usuario, id_recurso, num_personas, fecha) VALUES (?,?,?,?)");
+            $statement->bind_param('iiis', $id_usuario, $id_recurso, $num_personas, $fecha);
             $statement->execute();
             $statement->close();
         }
@@ -297,12 +241,11 @@ class Database
     {
         $db = $this->openConnection();
 
-        if ($res = $db->query("Select * FROM Ruta")) {
-            if (count($res->fetch_all()) > 0) {
-                $db->close();
-                return;
-            }
 
+        $res = $db->query("Select COUNT(*) as total FROM Ruta");
+        if ($res->fetch_assoc()['total'] > 0) {
+            $db->close();
+            return;
         }
 
         $csv = fopen("rutas.csv", "r");
@@ -327,12 +270,11 @@ class Database
 
         $db = $this->openConnection();
 
-        if ($res = $db->query("Select * FROM Restaurante")) {
-            if (count($res->fetch_all()) > 0) {
-                $db->close();
-                return;
-            }
 
+        $res = $db->query("Select COUNT(*) as total FROM Restaurante");
+        if ($res->fetch_assoc()['total'] > 0) {
+            $db->close();
+            return;
         }
 
         $csv = fopen("restaurantes.csv", "r");
@@ -360,9 +302,196 @@ class Database
 
         $res = $query->get_result()->fetch_assoc();
         $id = ($res == null) ? null : $res['id'];
+
+        $query->close();
         $db->close();
 
         return $id;
     }
+
+    public function signUp($user, $name, $surname, $passwd)
+    {
+        $db = $this->openConnection();
+
+        $query = $db->prepare("SELECT * FROM Usuario WHERE usuario=?");
+        $query->bind_param('s', $user);
+        $query->execute();
+
+        $res = $query->get_result()->fetch_assoc();
+
+        if (!isset($res)) { //No existe el nombre de usuario
+
+            $insert = $db->prepare("INSERT INTO Usuario (usuario, nombre, apellidos, pswd) VALUES (?,?,?,?)");
+            $insert->bind_param('ssss', $user, $name, $surname, $passwd);
+            $insert->execute();
+            $insert->close();
+        }
+
+        $query->close();
+        $db->close();
+
+        return $this->login($user, $passwd);
+    }
+
+
+    public function findAll($table)
+    {
+        $db = $this->openConnection();
+
+        $query = $db->query("SELECT * FROM " . $table); // No se puede parametrizar el nombre de la tabla y no es entrada del usuario así que no es un riesgo
+
+        $res = array();
+
+        while ($row = $query->fetch_assoc()) {
+            $res[] = $row; // Push row into res array
+        }
+
+        $query->close();
+        $db->close();
+
+        return $res;
+
+    }
+
+    public function findById($table, $id)
+    {
+        $db = $this->openConnection();
+
+        $query = $db->prepare("SELECT * FROM " . $table . " where id = ?");
+        $query->bind_param('i', $id);
+        $query->execute();
+
+        $res = array();
+
+        $res = $query->get_result()->fetch_assoc();
+
+        $query->close();
+        $db->close();
+
+        return $res;
+    }
+
+    public function findResourceById($id)
+    {
+        $db = $this->openConnection();
+
+        $ruta = $this->findById("Ruta", $id);
+        $restaurante = $this->findById("Restaurante", $id);
+
+        if (isset($ruta)) {
+            $query = "SELECT recurso.id, recurso.nombre, recurso.descripcion, recurso.max_ocupacion, recurso.precio, ruta.transporte, ruta.duracion
+            FROM recurso, ruta
+            where (recurso.id = ruta.id) AND recurso.id = ?";
+        } else if (isset($restaurante)) {
+            $query = "SELECT recurso.id, recurso.nombre, recurso.descripcion, recurso.max_ocupacion, recurso.precio, restaurante.menu
+            FROM recurso, restaurante
+            where (recurso.id = restaurante.id) AND recurso.id = ?";
+        } else {
+            $query = "SELECT * from recurso where id = ?";
+        }
+
+        $query = $db->prepare($query);
+        $query->bind_param('s', $id);
+        $query->execute();
+
+        $res = $query->get_result()->fetch_assoc();
+
+        $query->close();
+        $db->close();
+
+        return $res;
+
+    }
+
+    public function findAvailabilityByResourceId($id)
+    {
+
+        $db = $this->openConnection();
+
+        $query = $db->prepare("SELECT * FROM DisponibilidadHoraria where id_recurso = ?");
+        $query->bind_param('i', $id);
+        $query->execute();
+
+        $res = $query->get_result()->fetch_assoc();
+
+        $query->close();
+        $db->close();
+
+        return $res;
+    }
+    public function findBookingsByResourceId($id)
+    {
+
+        $db = $this->openConnection();
+
+        $query = $db->prepare("SELECT * FROM Reserva where id_recurso = ?");
+        $query->bind_param('i', $id);
+        $query->execute();
+
+        $result = $query->get_result();
+        $res = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $res[] = $row; // Push row into res array
+        }
+
+        $query->close();
+        $db->close();
+
+        return $res;
+    }
+
+    public function findBookingsByUserId($id)
+    {
+
+        $db = $this->openConnection();
+
+        $query = $db->prepare("SELECT * FROM Reserva where id_usuario = ?");
+        $query->bind_param('i', $id);
+        $query->execute();
+
+        $result = $query->get_result();
+        $res = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $res[] = $row; // Push row into res array
+        }
+
+        $query->close();
+        $db->close();
+
+        return $res;
+    }
+
+    public function findOccupiedSpotsByResourceIdAndDate($id, $date)
+    {
+
+        $db = $this->openConnection();
+
+        $query = $db->prepare("SELECT SUM(num_personas) as total FROM Reserva where id_recurso = ? and DATE(fecha)= DATE(?)");
+        $query->bind_param('is', $id, $date);
+        $query->execute();
+
+
+        $res = array();
+
+        $res = $query->get_result()->fetch_assoc();
+
+        $query->close();
+        $db->close();
+
+        return $res['total'];
+    }
+    public function book($id_usuario, $id_recurso, $num_personas, $fecha)
+    {
+        $db = $this->openConnection();
+        $insert = $db->prepare("INSERT INTO Reserva (id_usuario, id_recurso, num_personas, fecha) VALUES (?,?,?,?)");
+        $insert->bind_param('iiis', $id_usuario, $id_recurso, $num_personas, $fecha);
+        $insert->execute();
+
+        $insert->close();
+        $db->close();
+    }
+
 }
 ?>
