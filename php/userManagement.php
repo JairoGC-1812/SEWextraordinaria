@@ -56,7 +56,7 @@ class UserManagement
     public function showSignup()
     {
         echo "
-        <h2> Inicio de sesión </h2>
+        <h2> Registro de usuario </h2>
         <form method='post' action='#'>
             <p>
                 <label for='user'> Usuario: </label>
