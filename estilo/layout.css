@@ -19,30 +19,34 @@ main>section>h2 {
     width: 100%;
 }
 
-main>section>section{
-    flex:1;
+main>section>section {
+    flex: 1;
 }
 
-section, header, article{
+section,
+header,
+article {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
 }
 
-section > article{
+section>article {
     flex-flow: row wrap;
     justify-content: center;
     width: 80%;
 }
 
-fieldset{
+fieldset {
     width: 100%;
     margin-bottom: 2%;
 }
-section > article > p{
+
+section>article>p {
     width: 100%;
 }
-main>section>button{
+
+main>section>button {
     margin: auto 1% auto 1%;
 }
 
@@ -81,63 +85,94 @@ nav {
 }
 
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-main>section>section>ul{
+main>section>section>ul {
     width: 100%;
 }
 
-main>section>section>img{
-    width:30%;
+main>section>section>img {
+    width: 30%;
     height: auto;
 }
 
-h3,h4,h5{
+h3,
+h4,
+h5 {
     width: 100%;
 }
 
-h5{
+h5 {
     font-size: large;
 }
-main>article{
+
+main>article {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     width: 100%;
 }
-main>article>section{
+
+main>h2~article {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: left;
+}
+
+main>h2~article>p {
+    width: 75%;
+    margin: 1%;
+}
+
+main>h2~article>dl{
+    flex-grow: 1;
+}
+main>h2~article>form{
+    flex-grow: 1;
+}
+main>article>section {
     display: flex;
     flex-flow: row wrap;
+    flex-grow: 1;
     width: 80%;
 }
-
-main>article>section>p{
+main>article>section + p{
+    flex-grow: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+main>article>section>p {
     width: 100%;
     font-weight: normal;
 }
 
-main>article>section>p{
-    width: 100%;
-    font-weight: normal;
-}
-main>section>img{
+main>section>img {
     max-width: 80%;
 }
-aside>img, aside>video{
+
+aside>img,
+aside>video {
     width: 100%;
-    height: auto;
     margin-top: 1%;
 }
 
-img, video{
-    height: auto;
+img,
+video {
     max-width: 100%;
+    height: auto;
 }
 
-section>aside{
+section>aside {
     height: 50vh;
+    width: 100%;
+}
+form>p{
+    text-align: center;
+}
+h5+p{
     width: 100%;
 }

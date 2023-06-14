@@ -12,9 +12,9 @@
     <meta name="keywords" content="Villaviciosa, turismo, restaurantes, rutas, recursos, eventos" />
 
     <title>Villaviciosa Turismo - Meteorología</title>
-    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/nav.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="../estilo/nav.css" />
+    <link rel="stylesheet" type="text/css" href="../estilo/layout.css" />
 </head>
 
 <body>
@@ -28,11 +28,11 @@
     <header>
         <h1>Villaviciosa Turismo</h1>
         <nav>
-            <a href="index.html" title="Página de inicio" tabindex="1" accesskey="I">Inicio</a>
-            <a href="gastronomia.html" title="Gastronomía" tabindex="2" accesskey="G">Gastronomía</a>
-            <a href="rutas.html" title="Rutas turísticas" tabindex="3" accesskey="R"> Rutas</a>
-            <a href="meteorologia.html" title="Información meteorológica" tabindex="4" accesskey="M">Meteorología</a>
-            <a href="juego.html" title="Juego" tabindex="5" accesskey="J">Juego</a>
+            <a href="../index.html" title="Página de inicio" tabindex="1" accesskey="I">Inicio</a>
+            <a href="../gastronomia.html" title="Gastronomía" tabindex="2" accesskey="G">Gastronomía</a>
+            <a href="../rutas.html" title="Rutas turísticas" tabindex="3" accesskey="R"> Rutas</a>
+            <a href="../meteorologia.html" title="Información meteorológica" tabindex="4" accesskey="M">Meteorología</a>
+            <a href="../juego.html" title="Juego" tabindex="5" accesskey="J">Juego</a>
             <a href="reservas.php" class="active" title="Reserva de rutas" tabindex="6" accesskey="V">Reservas</a>
             <?php
             $login->showLogout();
@@ -74,7 +74,7 @@
                 echo "<h2>Recursos turísticos</h2>";
                 $resources = $this->db->findAll("Recurso");
                 foreach ($resources as $r) {
-                    echo "<section>";
+                    echo "<article>";
                     echo "<h3>" . $r['nombre'] . "</h3>";
                     echo "<dl>";
                     echo "<dt>Aforo:</dt>";
@@ -86,7 +86,7 @@
                     echo "<form action='#' method='GET'>";
                     echo "<button name='id_recurso' type='submit' value='" . $r['id'] . "'>Reservar</button>";
                     echo "</form>";
-                    echo "</section>";
+                    echo "</article>";
                 }
             }
 

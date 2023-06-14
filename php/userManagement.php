@@ -37,11 +37,18 @@ class UserManagement
         echo "
                 <h2> Inicio de sesión </h2>
                 <form method='post' action='#'>
-                    <label for='user'> Usuario: </label>
-                    <input type='text' name='user' id='user' required/>
-                    <label for='passwd'> Contraseña:</label>
-                    <input type='password' name='passwd' id='passwd' required/>
-                    <input type='submit' value='Iniciar sesión'/>
+                    <p>
+                        <label for='user'> Usuario: </label>
+                        <input type='text' placeholder='Usuario' name='user' id='user' required/>
+                    </p>
+                    <p>
+                        <label for='passwd'> Contraseña:</label>
+                        <input type='password' placeholder='Contraseña' name='passwd' id='passwd' required/>
+                    </p>
+                    <p>
+                        <input type='submit' value='Iniciar sesión'/>
+                    </p>
+                    <p>¿Aún no tienes cuenta? <a href='signup.php'>¡Regístrate!</a></p>
                 </form>
             ";
     }
@@ -51,18 +58,26 @@ class UserManagement
         echo "
         <h2> Inicio de sesión </h2>
         <form method='post' action='#'>
-            <label for='user'> Usuario: </label>
-            <input type='text' placeholder='Usuario' name='user' id='user'/>
-
-            <label for='name'> Nombre: </label>
-            <input type='text' placeholder='Nombre' name='name' id='name'/>
-
-            <label for='surname'> Apellidos: </label>
-            <input type='text' placeholder='Apellidos' name='surname' id='surname'/>
-
-            <label for='passwd'> Contraseña:</label>
-            <input type='password' placeholder='Contraseña' name='passwd' id='passwd'/>
-            <input type='submit' value='Registrarse'/>
+            <p>
+                <label for='user'> Usuario: </label>
+                <input type='text' placeholder='Usuario' name='user' id='user'/>
+            </p>
+            <p>
+                <label for='name'> Nombre: </label>
+                <input type='text' placeholder='Nombre' name='name' id='name'/>
+            </p>
+            <p>
+                <label for='surname'> Apellidos: </label>
+                <input type='text' placeholder='Apellidos' name='surname' id='surname'/>
+            </p>
+            <p>
+                <label for='passwd'> Contraseña:</label>
+                <input type='password' placeholder='Contraseña' name='passwd' id='passwd'/>
+            </p>
+            <p>
+                <input type='submit' value='Registrarse'/>
+            </p>
+            <p> ¿Ya tienes cuenta? <a href='login.php'>¡Inicia sesión!</a><p>
         </form>
     ";
     }
@@ -70,7 +85,7 @@ class UserManagement
     public function showLogout()
     {
         if (isset($_SESSION['user_id'])) {
-            echo '<a href="login.php?logout=true" class="active" title="Cerrar sesión" tabindex="6" accesskey="C">Cerrar sesión</a>';
+            echo '<a href="login.php?logout=true" title="Cerrar sesión" tabindex="6" accesskey="C">Cerrar sesión</a>';
         }
     }
 

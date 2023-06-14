@@ -193,7 +193,7 @@ class XMLParser {
                             path[j] = {lat: lat, lng: lng};
                         }
 //-------------------------------REVISAR---------------------------------------------------                        
-                        maps[i - 1] = new google.maps.Map($("aside[title=\"ruta" + i + "\"]"), {
+                        maps[i - 1] = new google.maps.Map($("aside[title=\"ruta" + i + "\"]").get(0), {
                             center: path[parseInt(path.length / 2)],
                             zoom: 10,
                             mapTypeId: 'hybrid'
