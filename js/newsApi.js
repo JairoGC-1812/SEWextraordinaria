@@ -2,7 +2,6 @@ class News {
     constructor(query) {
         this.q = query;
         this.lang = "es";
-        this.country = "es";
     }
 
     showNews() {
@@ -10,7 +9,6 @@ class News {
         let url = "https://gnews.io/api/v4/search?q=";
         url += this.q;
         url += "&lang=" + this.lang;
-        url += "&country=" + this.country;
         url += "&max=10"
         url += "&apikey=" + apiKey;
         $.ajax({
@@ -38,5 +36,5 @@ class News {
     }
 }
 
-let news = new News("villaviciosa asturias");
+let news = new News("eswatini");
 news.showNews();

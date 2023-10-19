@@ -1,8 +1,8 @@
 class MeteoForecast {
     constructor() {
         this.baseUrl = "https://api.open-meteo.com/v1/forecast";
-        this.lat = "43.48";
-        this.lon = "-5.44"
+        this.lat = "-26.32";
+        this.lon = "31.16"
         this.hourlyData = "cloudcover";
         this.dailyData = "temperature_2m_max,temperature_2m_min,precipitation_probability_max"
         this.timezone = "Europe/Berlin"

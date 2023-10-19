@@ -1,7 +1,7 @@
 class StaticMap{
     constructor(){
-        this.latitud = "43.461328";
-        this.longitud = "-5.438658";
+        this.latitud = "-26.543989";
+        this.longitud = "31.532736";
         
     }
 
@@ -14,7 +14,7 @@ class StaticMap{
         let centro = "center=" + this.latitud + "," + this.longitud;
         //zoom (obligatorio si no hay marcadores)
         //zoom: 1 (el mundo), 5 (continentes), 10 (ciudad), 15 (calles), 20 (edificios)
-        let zoom ="&zoom=10";
+        let zoom ="&zoom=8";
         //Tamaño del mapa en pixeles (obligatorio)
         let size= "&size=800x600";
         //Escala (opcional)

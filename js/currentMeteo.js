@@ -6,7 +6,7 @@ class CurrentMeteo {
         this.unidades = "&units=metric";
         this.idioma = "&lang=es";
         this.baseUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
-        this.ciudad = "villaviciosa";
+        this.ciudad = "mbabane";
     }
 
     load() {
