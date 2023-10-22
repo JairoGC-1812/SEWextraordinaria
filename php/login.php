@@ -9,9 +9,9 @@
 
     <meta name="author" content="Jairo García Castro - UO271449" />
     <meta name="description" content="Pantalla de inicio de sesión" />
-    <meta name="keywords" content="Villaviciosa, inicio, sesión, reservas" />
+    <meta name="keywords" content="Esuatini, inicio, sesión, reservas" />
 
-    <title>Villaviciosa Turismo - Meteorología</title>
+    <title>Turismo Esuatini - Login</title>
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="../estilo/nav.css" />
     <link rel="stylesheet" type="text/css" href="../estilo/layout.css" />
@@ -26,7 +26,7 @@
     $login = new UserManagement($db);
     ?>
     <header>
-        <h1>Villaviciosa Turismo</h1>
+        <h1>Turismo Esuatini</h1>
         <nav>
             <a href="../index.html" title="Página de inicio" tabindex="1" accesskey="I">Inicio</a>
             <a href="../gastronomia.html" title="Gastronomía" tabindex="2" accesskey="G">Gastronomía</a>
@@ -46,7 +46,7 @@
     </main>
 
     <footer>
-        <p>Jairo García Castro - Software y Estándares para la Web 2022</p>
+        <p>Jairo García Castro - Software y Estándares para la Web 2023</p>
     </footer>
 </body>
 

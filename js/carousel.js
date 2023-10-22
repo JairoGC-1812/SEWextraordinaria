@@ -3,13 +3,14 @@ class Carousel {
         if (imgDict === undefined) {
             this.imgDict =
             {
-                "abastos_1.jpg": "Interior del mercado de abastos de Villaviciosa",
-                "molin_pena.jpg": "Molín La Peña, junto al Ríu Profundu", 
-                "teatro_riera.jpg": "Fachada del Teatro Riera de Villaviciosa",
-                "villaviciosa_aerea.jpg": "Vista aérea de Villaviciosa",
-                "exaltacion_manzana_1.jpg": "Escultura de la Exaltación a la Manzana, de Eduardo Úrculo",
-                "molin_perniles1.jpg": "Molín de Perniles, junto al Ríu Profundu",
-                "ateneo_1.jpg": "Fachada del Ateneo Obrero de Villaviciosa"
+                "aves_mlilwane.jpg": "Hipopótamo rugiendo en la reserva de Mlilwane con aves levantando el vuelo detrás.",
+                "elefante_hlane.png": "Elefante paseando en el parque nacional de Hlane", 
+                "jirafas_nisela.jpg": "Jirafas por la sabana de Nisela.",
+                "lobamba.jpg": "Vista aérea de la ciudad de Lobamba",
+                "rinoceronte_mkhaya.jpg": "Rinoceronte en la reserva de Mkhaya",
+                "zebras_mlilwane.jpg": "Zebras en la reserva natural de Mlilwane",
+                "casas_mlilwane.jpg": "Cabañas de adobe tradicionales suazi",
+                "bulembu.jpg": "Vista aérea del pueblo minero de bulembu"
             }
         }
         else {

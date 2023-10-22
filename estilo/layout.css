@@ -5,24 +5,28 @@
     Hoja que gestiona la maquetación de los documentos
 ===========================================================
 */
-
+/* Especificidad: 0 0 1 */
 header {
     width: 100%;
     margin-top: 0;
 }
 
+/* Especificidad: 0 0 1 */
 footer {
     width: 100%;
 }
 
+/* Especificidad: 0 0 3 */
 main>section>h2 {
     width: 100%;
 }
 
+/* Especificidad: 0 0 3 */
 main>section>section {
     flex: 1;
 }
 
+/* Especificidad: 0 0 1 */
 section,
 header,
 article {
@@ -31,45 +35,51 @@ article {
     flex-flow: row wrap;
 }
 
+/* Especificidad: 0 0 2 */
 section>article {
     flex-flow: row wrap;
     justify-content: center;
     width: 80%;
 }
 
+/* Especificidad: 0 0 1 */
 fieldset {
     width: 100%;
     margin-bottom: 2%;
 }
 
+/* Especificidad: 0 0 3 */
 section>article>p {
     width: 100%;
 }
 
+/* Especificidad: 0 0 3 */
 main>section>button {
     margin: auto 1% auto 1%;
 }
 
+/* Especificidad: 0 0 3 */
 main>article>h2 {
     width: 100%;
 }
 
-
-
+/* Especificidad: 0 0 3 */
 main>article>article {
     flex: 4;
     margin: 0 5% 0 3%;
 }
 
+/* Especificidad: 0 0 2 */
 article>aside {
     flex: 1;
 }
 
+/* Especificidad: 0 0 3 */
 article>aside>h2 {
     width: 100%;
 }
 
-
+/* Especificidad: 0 0 2 */
 aside>audio {
     flex-grow: 1;
     margin-left: 5%;
@@ -78,37 +88,42 @@ aside>audio {
 }
 
 
-/* 0 0 1*/
+/* Especificidad: 0 0 1 */
 nav {
     display: flex;
     flex-wrap: wrap;
 }
 
-
+/* Especificidad: 0 0 1 */
 body {
     margin: 0;
     padding: 0;
 }
 
+/* Especificidad: 0 0 4 */
 main>section>section>ul {
     width: 100%;
 }
 
+/* Especificidad: 0 0 4 */
 main>section>section>img {
     width: 30%;
     height: auto;
 }
 
+/* Especificidad: 0 0 1 */
 h3,
 h4,
 h5 {
     width: 100%;
 }
 
+/* Especificidad: 0 0 1 */
 h5 {
     font-size: large;
 }
 
+/* Especificidad: 0 0 2 */
 main>article {
     display: flex;
     flex-flow: row wrap;
@@ -116,6 +131,7 @@ main>article {
     width: 100%;
 }
 
+/* Especificidad: 0 0 3 */
 main>h2~article {
     width: 80%;
     margin-left: 10%;
@@ -123,56 +139,75 @@ main>h2~article {
     justify-content: left;
 }
 
+/* Especificidad: 0 0 4 */
 main>h2~article>p {
     width: 75%;
     margin: 1%;
 }
 
-main>h2~article>dl{
+/* Especificidad: 0 0 4 */
+main>h2~article>dl {
     flex-grow: 1;
 }
-main>h2~article>form{
+
+/* Especificidad: 0 0 4 */
+main>h2~article>form {
     flex-grow: 1;
 }
+
+/* Especificidad: 0 0 3 */
 main>article>section {
     display: flex;
     flex-flow: row wrap;
     flex-grow: 1;
     width: 80%;
 }
-main>article>section + p{
+
+/* Especificidad: 0 0 4 */
+main>article>section+p {
     flex-grow: 1;
     margin-left: 10%;
     margin-right: 10%;
 }
+
+/* Especificidad: 0 0 4 */
 main>article>section>p {
     width: 100%;
     font-weight: normal;
 }
 
+/* Especificidad: 0 0 3 */
 main>section>img {
     max-width: 80%;
 }
 
+/* Especificidad: 0 0 2 */
 aside>img,
 aside>video {
     width: 100%;
     margin-top: 1%;
 }
 
+/* Especificidad: 0 0 1 */
 img,
-video {
+video,
+svg {
     max-width: 100%;
     height: auto;
 }
 
+/* Especificidad: 0 0 2 */
 section>aside {
     height: 50vh;
     width: 100%;
 }
-form>p{
+
+/* Especificidad: 0 0 2 */
+form>p {
     text-align: center;
 }
-h5+p{
+
+/* Especificidad: 0 0 2 */
+h5+p {
     width: 100%;
 }

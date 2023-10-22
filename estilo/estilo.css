@@ -6,79 +6,94 @@
     generales de estilo: fuentes, colores, multimedia...
 ===========================================================
 */
-body > header{
-    background-color:rgb(91, 149, 197);
+/* Especificidad: 0 0 2 */
+body>header {
+    background-color: rgb(91, 149, 197);
     padding: 0%;
 }
 
-footer{
+/* Especificidad: 0 0 1 */
+footer {
     text-align: center;
     font-size: larger;
     background-color: rgb(91, 149, 197);
     font-weight: bold;
 }
 
-aside{ 
+/* Especificidad: 0 0 1 */
+aside {
     background-color: rgb(91, 149, 197);
 }
 
-
-aside > h2{
+/* Especificidad: 0 0 2 */
+aside>h2 {
     text-align: center;
     font-weight: bold;
     font-size: x-large;
 }
 
-/* 0 0 1*/
-body{    
+/* Especificidad: 0 0 1 */
+body {
     text-align: justify;
     background-color: rgb(117, 166, 206);
     font-size: large;
 }
-dt{
+
+/* Especificidad: 0 0 1 */
+dt {
     font-weight: bold;
 }
 
-h1{
+/* Especificidad: 0 0 1 */
+h1 {
     font-size: 3em;
     text-align: center;
     font-weight: bold;
 }
 
-
-h2{
+/* Especificidad: 0 0 1 */
+h2 {
     text-align: center;
     font-weight: bold;
     font-size: xx-large;
 }
+
+/* Especificidad: 0 0 1 */
 h3 {
     text-align: center;
     font-weight: bold;
     text-decoration: underline;
 }
 
-h4,h5{
+/* Especificidad: 0 0 1 */
+h4,
+h5 {
     text-align: center;
 }
 
 
-/* 0 0 3*/
-table tr th{
+/* Especificidad: 0 0 3 */
+table tr th {
     font-weight: bold;
     text-decoration: underline;
 }
 
-table tr th, td{
-    border: 0.05em solid ;
+/* Especificidad: 0 0 3 */
+table tr th,
+/* Especificidad: 0 0 1 */
+td {
+    border: 0.05em solid;
     padding: 0.5em;
 }
 
-table{
+/* Especificidad: 0 0 1 */
+table {
     border-collapse: collapse;
     text-align: center;
 }
 
-main>section>button{
+/* Especificidad: 0 0 3 */
+main>section>button {
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -86,67 +101,81 @@ main>section>button{
     font-size: large;
 }
 
-main>section>section{
-    border:solid;
+/* Especificidad: 0 0 3 */
+main>section>section {
+    border: solid;
     border-radius: 0.5em;
     background-color: rgb(196, 219, 240);
-    padding:0.5em;
+    padding: 0.5em;
     margin: 0.5em;
 }
 
-main>section>section>dl{
+/* Especificidad: 0 0 4 */
+main>section>section>dl {
     text-align: left;
 }
 
-main>section>p{
+/* Especificidad: 0 0 3 */
+main>section>p {
     margin-left: 10%;
     margin-right: 10%;
 }
 
-input[type=button]{
+/* Especificidad: 0 1 1 */
+input[type=button] {
     background-color: rgb(203, 214, 53);
     font-size: larger;
     font-weight: bold;
     padding: 0.5em;
 }
 
-section > article p{
+/* Especificidad: 0 0 3 */
+section>article p {
     font-size: larger;
 }
 
-legend{
+/* Especificidad: 0 0 1 */
+legend {
     font-size: large;
     text-align: left;
 }
 
-section > article > h3{
+/* Especificidad: 0 0 3 */
+section>article>h3 {
     font-size: larger;
     text-decoration: none;
 }
 
-section > article > h3 + p:only-of-type {
-    background-color:red;
+/* Especificidad: 0 1 4 */
+section>article>h3+p:only-of-type {
+    background-color: red;
     font-weight: bold;
     padding: 0.2em;
     text-align: center;
     width: fit-content;
 }
 
-a{
-color: #000052;
-word-wrap: break-word;
+/* Especificidad: 0 0 1 */
+a {
+    color: #000052;
+    word-wrap: break-word;
 }
 
-main>article>section>dl:last-of-type>dd{
+/* Especificidad: 0 1 5 */
+main>article>section>dl:last-of-type>dd {
     display: list-item;
     list-style-type: disc;
 }
 
-main>article>p{
+/* Especificidad: 0 0 3 */
+main>article>p {
     max-width: 80%;
 }
 
-form>button, input[type="submit"]{
+/* Especificidad: 0 0 2 */
+form>button,
+/* Especificidad: 0 1 1 */
+input[type="submit"] {
     font-size: large;
     background-color: #9198EE;
 }

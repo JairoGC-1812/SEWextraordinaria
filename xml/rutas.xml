@@ -4,236 +4,229 @@
 
 <rutas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="rutas.xsd">
-  <ruta nombre="Ruta los Molinos del Ríu Profundu" dificultad="Baja" transporte="A pie">
+  <ruta nombre="Viaje en coche por Esuatini" dificultad="Baja" transporte="Coche">
     <tipos>
-      <tipo> Etnográfica </tipo>
+      <tipo> Zoológica </tipo>
       <tipo> Paisajística </tipo>
-      <tipo> Senderismo </tipo>
+      <tipo> Natural </tipo>
     </tipos>
-    <tiempo duracion="5 horas" fecha-inicio="2023-06-10" hora-inicio="09:00:00" />
+    <tiempo duracion="7 días" fecha-inicio="2023-11-01" hora-inicio="09:00:00" />
 
     <agencia> Sin agencia</agencia>
 
-    <descripcion>Una de las rutas más atractivas de Villaviciosa. Tramo de 7km con ruinas de antiguos molinos de agua rodeados de bosque de ribera</descripcion>
+    <descripcion>Maravilloso roadtrip por Esuatini que permitirá visitar algunos de los puntos más memorables del país y admirar la naturaleza africana</descripcion>
 
     <personas-adecuadas>Adecuado para niños </personas-adecuadas>
 
-    <inicio lugar="Valbúcar" direccion="AS-255, 9, Villaviciosa, Asturias" />
-    <coordenadas latitud="43.461328" longitud="-5.438658" altitud="34" />
+    <inicio lugar="Matsapha" direccion="Aeropuerto de Matsapha, Matsapha, Esuatini" />
+    <coordenadas latitud="-26.519248" longitud="31.315101" altitud="625" />
 
     <referencias>
-      <referencia> https://www.turismovillaviciosa.es/ruta-de-los-molinos-del-rio-profundu/villaviciosa </referencia>
-      <referencia> https://www.cotoyapindia.com/2019/06/ruta-de-los-molinos-pr-ast-137.html </referencia>
-      <referencia> https://es.wikiloc.com/rutas-senderismo/la-ruta-de-los-molinos-del-rio-profundo-villaviciosa-25280188</referencia>
+      <referencia> https://viaboo.com/roadtrips/Africa/South_Africa/Swaziland/Grandtour </referencia>
+      <referencia> https://biggameparks.org/properties/mkhaya-game-reserve-3 </referencia>
+      <referencia> https://www.thekingdomofeswatini.com/central-eswatini/matsapha/</referencia>
     </referencias>
 
     <recomendacion> 8 </recomendacion>
 
     <hitos>
-      <hito nombre="Molín de Griselda" distancia-desde-anterior="500" unidades-de-distancia="m">
-        <descripcion> Ruinas del Molín de Griselda, directamente visible desde el camino de la ruta</descripcion>
-        <coordenadas latitud="43.460210" longitud="-5.434374" altitud="31" />
+      <hito nombre="Reserva animal del Mkhaya" distancia-desde-anterior="55"
+        unidades-de-distancia="km">
+        <descripcion> Reserva natural de vida salvaje, con presencia de animales en peligro como antílopes, rinocerones, leopardos o hienas</descripcion>
+        <coordenadas latitud="-26.657439" longitud="31.756084" altitud="238" />
         <imagenes>
-          <imagen> multimedia/molin_griselda.jpg </imagen>
+          <imagen> multimedia/rinoceronte_mkhaya.jpg </imagen>
+          <imagen> multimedia/bufalo_mkhaya.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Molín de Villaverde" distancia-desde-anterior="1200" unidades-de-distancia="m">
-        <descripcion> Ruinas del Molín de Villaverde, un poco más alejado del camino de la ruta pero rodeado de precioso bosque autóctono</descripcion>
-        <coordenadas latitud="43.456533" longitud="-5.424323" altitud="54" />
+      <hito nombre="Parque Nacional Hlane Royal" distancia-desde-anterior="73"
+        unidades-de-distancia="km">
+        <descripcion> Parque nacional donde se podrá disfrutar de las maravillosas vistas de la sabana africana, además de vida salvaje como leones, hipopótamos o elefantes.</descripcion>
+        <coordenadas latitud="-26.261067" longitud="31.879848" altitud="286" />
         <imagenes>
-          <imagen> multimedia/molin_villaverde.jpg </imagen>
-        </imagenes>
-      </hito>
-
-      <hito nombre="Molín el Pitu" distancia-desde-anterior="500" unidades-de-distancia="m">
-        <descripcion> Ruinas del Molín El Pitu. Casi totalmente rodeadas de vegetación pero con un encanto especial. En su interior se puede observar la rueda original</descripcion>
-        <coordenadas latitud="43.452277" longitud="-5.421454" altitud="63" />
-        <imagenes>
-          <imagen> multimedia/molin_pitu1.jpg </imagen>
-          <imagen> multimedia/molin_pitu2.jpg </imagen>
-        </imagenes>
-      </hito>
-
-      <hito nombre="Molín de Perniles" distancia-desde-anterior="1400" unidades-de-distancia="m">
-        <descripcion>Ruinas del Molín de Perniles en un paraje ideal rodeado de vegetación y naturaleza. </descripcion>
-        <coordenadas latitud="43.450349" longitud="-5.408034" altitud="102" />
-        <imagenes>
-          <imagen> multimedia/molin_perniles1.jpg </imagen>
-          <imagen> multimedia/molin_perniles2.jpg </imagen>
-        </imagenes>
-      </hito>
-
-      <hito nombre="Molín la Peña" distancia-desde-anterior="1800" unidades-de-distancia="m">
-        <descripcion> El molín La Peña es el mejor conservado y más conocido de la ruta, con la cascada junto a la que se encuentra </descripcion>
-        <coordenadas latitud="43.439629" longitud="-5.397353" altitud="145" />
-        <imagenes>
-          <imagen> multimedia/molin_pena.jpg </imagen>
+          <imagen> multimedia/antilope_hlane.jpg </imagen>
+          <imagen> multimedia/elefante_hlane.png </imagen>
         </imagenes>
         <videos>
-          <video> multimedia/molin_pena.mp4</video>
+          <video> multimedia/video_hlane.mp4</video>
         </videos>
       </hito>
 
-      <hito nombre="Molín d'Arriba" distancia-desde-anterior="1000" unidades-de-distancia="m">
-        <descripcion> El molín d'Arriba es el último de esta ruta y otro de los que mejor se conserva. Se encuentra cerca de la aldea de Busllaz. </descripcion>
-        <coordenadas latitud="43.433653" longitud="-5.391802" altitud="180" />
+      <hito nombre="Bulembu" distancia-desde-anterior="165" unidades-de-distancia="km">
+        <descripcion>Precioso pueblo minero de montaña con montones de atractivos turísticos: mercados, vistas espectaculares, un museo de la mina...</descripcion>
+        <coordenadas latitud="-25.950093" longitud="31.132810" altitud="1203" />
         <imagenes>
-          <imagen> multimedia/molin_darriba.jpg </imagen>
+          <imagen> multimedia/bulembu.jpg </imagen>
+          <imagen> multimedia/bulembu_museo.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Parque Nacional de Malolotja" distancia-desde-anterior="44"
+        unidades-de-distancia="km">
+        <descripcion>En esta maravillosa reserva natural podrás pasear entre su vegetación, bañarte en las cascadas e incluso observar a la extraña águila cafre </descripcion>
+        <coordenadas latitud="-26.142209" longitud="31.117464" altitud="1430" />
+        <imagenes>
+          <imagen> multimedia/cascada_malolotja.jpg </imagen>
+          <imagen> multimedia/escalada_malolotja.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Mbabane" distancia-desde-anterior="30" unidades-de-distancia="km">
+        <descripcion> Capital administrativa de Esuatini con un montón de vida y entretenimientos. </descripcion>
+        <coordenadas latitud="-26.302734" longitud="31.119700" altitud="1258" />
+        <imagenes>
+          <imagen> multimedia/mbabane.jpg </imagen>
+          <imagen> multimedia/estacion_mbabane.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Lobamba" distancia-desde-anterior="16" unidades-de-distancia="km">
+        <descripcion> Capital legislativa de Esuatini, donde se podrá visitar lugares como su museo nacional o su parlamento. </descripcion>
+        <coordenadas latitud="-26.400341" longitud="31.175529" altitud="750" />
+        <imagenes>
+          <imagen> multimedia/lobamba.jpg </imagen>
+          <imagen> multimedia/parlamento_lobamba.jpg </imagen>
+          <imagen> multimedia/museo_lobamba.jpg </imagen>
+        </imagenes>
+      </hito>
+
+      <hito nombre="Parque Nacional Mlilwane" distancia-desde-anterior="20"
+        unidades-de-distancia="km">
+        <descripcion> Reserva natural de vida salvaje por donde se podrán realizar increíbles safaris y admirar la belleza natural africana. </descripcion>
+        <coordenadas latitud="-26.479901" longitud="31.195724" altitud="712" />
+        <imagenes>
+          <imagen> multimedia/casas_mlilwane.jpg </imagen>
+          <imagen> multimedia/zebras_mlilwane.jpg </imagen>
         </imagenes>
       </hito>
     </hitos>
     <planimetria>js/ruta1.kml</planimetria>
     <altimetria>js/ruta1.svg</altimetria>
   </ruta>
-  <ruta nombre="Ruta de Carlos V" dificultad="Media" transporte="Caballo">
+
+  <ruta nombre="Ruta por la reserva de Mlilwane" dificultad="Muy Fácil" transporte="A pie">
     <tipos>
-      <tipo> Histórica </tipo>
       <tipo> Paisajística </tipo>
       <tipo> Naturaleza </tipo>
-      <tipo> Costa </tipo>
+      <tipo> Animales </tipo>
+      <tipo> Gastronómica </tipo>
     </tipos>
-    <tiempo duracion="2 horas" fecha-inicio="2023-06-17" hora-inicio="12:30:00" />
+    <tiempo duracion="2 horas" fecha-inicio="2023-11-15" hora-inicio="11:30:00" />
 
-    <agencia>Rutas Babieca</agencia>
+    <agencia>Mlilwane Wildlife Sanctuary Hikes</agencia>
 
-    <descripcion>En 1517 el rey Carlos I de España y V de Alemania desembarcó en Tazones y se dirigió a Villaciosa, donde se alojó durante cuatro días. Esta ruta recrea el mismo camino que siguió el Séquito Real. </descripcion>
+    <descripcion>Ruta corta y sencilla para admirar la vida salvaje sudafricana y terminar degustando platos típicos suazis</descripcion>
 
     <personas-adecuadas>Adecuado para niños </personas-adecuadas>
 
-    <inicio lugar="Playa de Tazones" direccion="Tazones, 20, 33315, San Roque, Asturias" />
-    <coordenadas latitud="43.545177" longitud="-5.399650" altitud="0" />
+    <inicio lugar="Camping de Mlilwane" direccion="Santuario de Mlilwane, Lobamba, Esuatini" />
+    <coordenadas latitud="-26.492810" longitud="31.185238" altitud="706" />
 
     <referencias>
-      <referencia> https://www.turismovillaviciosa.es/ruta-de-carlos-v/villaviciosa </referencia>
-      <referencia> https://www.turismoasturias.es/descubre/naturaleza/rutas/senderismo/ruta-carlos-v </referencia>
-      <referencia> https://www.guiarepsol.com/es/viajar/vamos-de-excursion/ruta-tazones-villaviciosa-camin-real-carlos-v-asturias/</referencia>
-      <referencia> https://www.turismoasturias.es/descubre/fiestas-de-interes-turistico/primer-desembarco-de-carlos-v</referencia>
+      <referencia> https://biggameparks.org/properties/mlilwane-wildlife-sanctuary-2 </referencia>
+      <referencia> https://biggameparks.org/properties/reillys-rock-4 </referencia>
+      <referencia> https://www.lonelyplanet.es/africa/suazilandia/imprescindible/santuario-de-vida-salvaje-mlilwane</referencia>
     </referencias>
 
     <recomendacion> 9 </recomendacion>
 
     <hitos>
-      <hito nombre="Lliñeru" distancia-desde-anterior="2200" unidades-de-distancia="m">
-        <descripcion>Preciosa pequeña aldea de aproximadamente 60 habitantes rodeada de las típicas pumaradas</descripcion>
-        <coordenadas latitud="43.534367" longitud="-5.396329" altitud="160" />
+      <hito nombre="Laguna de aves" distancia-desde-anterior="350" unidades-de-distancia="m">
+        <descripcion>Pequeña laguna con una amplia variedad de especies de aves salvajes y algún que otro animal como jabalíes o hipopótamos.</descripcion>
+        <coordenadas latitud="-26.4897174" longitud="31.1850326" altitud="712" />
         <imagenes>
-          <imagen> multimedia/llineru_pumarada.jpg </imagen>
-          <imagen> multimedia/ria_llineru.jpg </imagen>
+          <imagen> multimedia/aves_mlilwane.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Samartín del Mar" distancia-desde-anterior="2200" unidades-de-distancia="m">
-        <descripcion> Capital de la parroquia homónima, con vistas a la vega de la ría de Villaviciosa  </descripcion>
-        <coordenadas latitud="43.516857" longitud="-5.406217" altitud="50" />
+      <hito nombre="Lago de hipopótamos" distancia-desde-anterior="1000" unidades-de-distancia="m">
+        <descripcion> Precioso lago donde podrás observar tanto a animales acuáticos como hipopótamos o cocodrilos como a otros terrestres que se acercan a beber.</descripcion>
+        <coordenadas latitud="-26.482569" longitud="31.184358" altitud="710" />
         <imagenes>
-          <imagen> multimedia/iglesia_samartin.jpg </imagen>
+          <imagen> multimedia/cocodrilos_mlilwane.webp </imagen>
+          <imagen> multimedia/hipopotamo_mlilwane.jpg </imagen>
         </imagenes>
-        <videos>
-          <video> multimedia/vista_aerea_samartin.mp4</video>
-        </videos>
       </hito>
 
-      <hito nombre="Bedriñana" distancia-desde-anterior="4100" unidades-de-distancia="m">
-        <descripcion> Desde esta aldea tan guapa casi se puede atisbar el famoso llagar de Sidra el Gaitero </descripcion>
-        <coordenadas latitud="43.499473" longitud="-5.440082" altitud="55" />
+      <hito nombre="Albergue de Reilly's Rock" distancia-desde-anterior="3300"
+        unidades-de-distancia="m">
+        <descripcion> Finalizaremos esta ruta disfrutando de deliciosos manjares suazis en el albergue de Reilly's Rock.</descripcion>
+        <coordenadas latitud="-26.471631" longitud="31.180112" altitud="836" />
         <imagenes>
-          <imagen> multimedia/iglesia_bedrinana.jpg </imagen>
+          <imagen> multimedia/albergue_mlilwane.jpg </imagen>
+          <imagen> multimedia/albergue2_mlilwane.jpg </imagen>
         </imagenes>
-        <videos>
-          <video> multimedia/vista_aerea_bedrinana.mp4</video>
-        </videos>
       </hito>
 
-      <hito nombre="Villaviciosa" distancia-desde-anterior="2800" unidades-de-distancia="m">
-        <descripcion> Llegamos a "La Villa", capital maliaya con enorme valor cultural, histórico y estético </descripcion>
-        <coordenadas latitud="43.481348" longitud="-5.433572" altitud="0" />
-        <imagenes>
-          <imagen> multimedia/villaviciosa_aerea.jpg </imagen>
-          <imagen> multimedia/villaviciosa_ayuntamiento.jpg </imagen>
-          <imagen> multimedia/villaviciosa_sidra.jpg </imagen>
-        </imagenes>
-      </hito>
     </hitos>
     <planimetria>js/ruta2.kml</planimetria>
     <altimetria>js/ruta2.svg</altimetria>
   </ruta>
 
-  <ruta nombre="Ruta urbana Villaviciosa" dificultad="Baja" transporte="A pie">
+  <ruta nombre="Ruta por el sureste de Esuatini" dificultad="Alta" transporte="Caballo">
     <tipos>
-      <tipo> Urbana </tipo>
-      <tipo> Arquitectónica </tipo>
-      <tipo> Histórica </tipo>
+      <tipo> Paisajística </tipo>
+      <tipo> Zoológica </tipo>
+      <tipo> Etnográfica </tipo>
     </tipos>
-    <tiempo duracion="1 hora"/>
+    <tiempo duracion="4 días" />
 
-    <agencia> Sin agencia</agencia>
+    <agencia>Horseback Riding Eswatini</agencia>
 
-    <descripcion>Ruta urbana por la capital maliaya, para disfrutar de los elementos más destacables de esta</descripcion>
+    <descripcion>Preciosa ruta por la sabana suroriental de Esuatini, siguiendo la línea de la meseta que sirve de frontera con suazilandia hasta el embalse de Pongolapoort, situado en la frontera sur con Sudáfrica y compartido por ambos países.</descripcion>
 
-    <personas-adecuadas>Todas las edades</personas-adecuadas>
+    <personas-adecuadas>Mayores de 15 años</personas-adecuadas>
 
-    <inicio lugar="Ayuntamiento" direccion="Plaza del Ayuntamiento, S/N, Villaviciosa, Asturias" />
-    <coordenadas latitud="43.481320" longitud="-5.433561" altitud="6" />
+    <inicio lugar="USA Distillers - Big Bend"
+      direccion="Lavumisa Road, Farm 1085, Big Bend L311, Esuatini" />
+    <coordenadas latitud="-26.853601" longitud="31.968260" altitud="91" />
 
     <referencias>
-      <referencia> https://www.turismovillaviciosa.es/turismo/villaviciosa/ruta-historica-de-villaviciosa_2649_3_5503_0_1_in.html</referencia>
-      <referencia> https://www.dendecaguelu.com/2021/01/escultura-exaltacion-de-la-manzana-en.html </referencia>
-      <referencia> https://www.culturavillaviciosa.es/es/</referencia>
+      <referencia> https://www.usadistillers.com/</referencia>
+      <referencia> https://www.booking.com/hotel/sz/kamsholo-bushveld-safaris.es.html </referencia>
+      <referencia> https://en.wikipedia.org/wiki/Pongolapoort_Dam</referencia>
+      <referencia> https://royaljozini.com/</referencia>
     </referencias>
 
-    <recomendacion> 10 </recomendacion>
+    <recomendacion> 6 </recomendacion>
 
     <hitos>
-      <hito nombre="Exaltación de la manzana" distancia-desde-anterior="150" unidades-de-distancia="m">
-        <descripcion> Monumento en honor a José Cardín Fernández, creado por Eduardo Úrculo</descripcion>
-        <coordenadas latitud="43.482120" longitud="-5.432506" altitud="9" />
+      <hito nombre="KaMsholo Bushveld Safaris" distancia-desde-anterior="15"
+        unidades-de-distancia="km">
+        <descripcion> Alojamiento en plena reserva natural de Nisela, donde se podrá observar a ñúes, jirafas, zebras o jabalíes en su entorno natural.</descripcion>
+        <coordenadas latitud="-26.988993" longitud="31.941927" altitud="215" />
         <imagenes>
-          <imagen> multimedia/exaltacion_manzana_1.jpg </imagen>
-          <imagen> multimedia/exaltacion_manzana_2.jpg </imagen>
+          <imagen> multimedia/alojamiento_nisela.jpeg </imagen>
+          <imagen> multimedia/jirafas_nisela.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Ateneo Obrero" distancia-desde-anterior="210" unidades-de-distancia="m">
-        <descripcion> Edificio de la asociación sin ánimo de lucro homónima, dedicada a el ocio y recreo desde hace más de 100 años</descripcion>
-        <coordenadas latitud="43.481666" longitud="-5.434271" altitud="8" />
+      <hito nombre="Mbutfu" distancia-desde-anterior="12" unidades-de-distancia="km">
+        <descripcion> La siguiente noche la pasaremos en el pueblo de Mbutfu, donde nos alojaremos en verdaderas casas suazi construidas expresamente para este propósito y realizaremos actividades en el centro comunitario. </descripcion>
+        <coordenadas latitud="-27.080172" longitud="31.926027" altitud="216" />
         <imagenes>
-          <imagen> multimedia/ateneo_1.jpg </imagen>
-          <imagen> multimedia/ateneo_pintura.jpg </imagen>
+          <imagen> multimedia/centro_comunitario_mbutfu.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Teatro Riera" distancia-desde-anterior="200" unidades-de-distancia="m">
-        <descripcion> Inaugurado a mediados de los 40, el teatro riera es, desde entonces, uno de los principales foros culturales del concejo. En él, se organizan exposiciones, festivales, proyecciones...</descripcion>
-        <coordenadas latitud="43.481826" longitud="-5.436343" altitud="6" />
+      <hito nombre="Reserva natural Royal Jozini" distancia-desde-anterior="17.5"
+        unidades-de-distancia="km">
+        <descripcion>Atracción principal de esta ruta, donde nos alojaremos las últimas 2 noches antes de emprender la vuelta en coche y donde se dará libertad para que cada uno disfrute las actividades que prefiera.</descripcion>
+        <coordenadas latitud="-27.239307" longitud="31.901969" altitud="172" />
         <imagenes>
-          <imagen> multimedia/teatro_riera.jpg </imagen>
+          <imagen> multimedia/vista_aerea_jozini.jpg </imagen>
+          <imagen> multimedia/albergue_jozini.jpg </imagen>
         </imagenes>
       </hito>
 
-      <hito nombre="Restos de la muralla" distancia-desde-anterior="250" unidades-de-distancia="m">
-        <descripcion>Restos de la antigua muralla que rodeaba la villa </descripcion>
-        <coordenadas latitud="43.480061" longitud="-5.435038" altitud="8" />
+      <hito nombre="Embalse de Pongolapoort" distancia-desde-anterior="10"
+        unidades-de-distancia="km">
+        <descripcion> Finalmente llegamos al embalse de Pongolapoort, donde observaremos cocodrilos del Nilo, pelícanos, cigüeñas y la población más meridional de tetras africanos.</descripcion>
+        <coordenadas latitud="-27.280946" longitud="31.951270" altitud="147" />
         <imagenes>
-          <imagen> multimedia/muralla1.jpg </imagen>
-          <imagen> multimedia/muralla2.jpg </imagen>
-        </imagenes>
-      </hito>
-
-      <hito nombre="Monasterio de las Clarisas" distancia-desde-anterior="100" unidades-de-distancia="m">
-        <descripcion> Monasterio de la Purísima concepción, perteneciente a la Orden de las Clarisas </descripcion>
-        <coordenadas latitud="43.478750" longitud="-5.434361" altitud="19" />
-        <imagenes>
-          <imagen> multimedia/monasterio_clarisas.jpg </imagen>
-        </imagenes>
-      </hito>
-
-      <hito nombre="Plaza de Abastos" distancia-desde-anterior="150" unidades-de-distancia="m">
-        <descripcion> Elemento central de Villaviciosa, diseñado con arquitectura de hierro por Miguel de la Guardia. Alberga una decena de locales con diversos productos </descripcion>
-        <coordenadas latitud="43.480257" longitud="-5.434233" altitud="10" />
-        <imagenes>
-          <imagen> multimedia/abastos_1.jpg </imagen>
-          <imagen> multimedia/abastos_2.jpg </imagen>
+          <imagen> multimedia/embalse_pongolapoort.jpg </imagen>
+          <imagen> multimedia/tetras_pongolapoort.jpg </imagen>
         </imagenes>
       </hito>
     </hitos>

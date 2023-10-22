@@ -72,9 +72,8 @@ class XMLParser {
             txt += "<section>";
             txt += "<h4> Altimetría <h4>";
             txt += "<a href=\"" + $("altimetria", rutas[i]).text() + "\">Altimetría de " + $(rutas[i]).attr("nombre") + "</a>";
+            txt += this.createSVG(rutas[i]);
             txt += "</section>";
-
-            this.createSVG(rutas[i]);
 
             txt += "<section>";
             txt += "<h4> Planimetría </h4>";
@@ -129,6 +128,9 @@ class XMLParser {
         }
 
         svg += "</svg>";
+        console.log("Nombre de la ruta: " + $(ruta).attr("nombre"));
+        console.log(svg);
+        return svg;
     }
 
     createKML(ruta) {
@@ -168,8 +170,11 @@ class XMLParser {
         kml += "</Placemark>";
         kml += "</Document>";
         kml += "</kml>";
+        
+        console.log("Nombre de la ruta: " + $(ruta).attr("nombre"));
+        console.log(kml);
     }
-
+    
     initMap() {
         var script = document.createElement("script");
         script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXjk9mx9DWgzplUVXKroSbRdrewyo0uho&callback=initMap"
@@ -191,11 +196,10 @@ class XMLParser {
                             let lat = parseFloat(coordArray[j].split(",")[1]);
                             let lng = parseFloat(coordArray[j].split(",")[0]);
                             path[j] = {lat: lat, lng: lng};
-                        }
-//-------------------------------REVISAR---------------------------------------------------                        
+                        }                     
                         maps[i - 1] = new google.maps.Map($("aside[title=\"ruta" + i + "\"]").get(0), {
                             center: path[parseInt(path.length / 2)],
-                            zoom: 10,
+                            zoom: 9,
                             mapTypeId: 'hybrid'
                         });
                         let route = new google.maps.Polyline({

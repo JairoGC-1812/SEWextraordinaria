@@ -3,72 +3,72 @@ class Quiz {
         if (quiz === undefined) {
             this.quiz = [
                 {
-                    question: "¿Cuál es el tipo de bebida más característico de Villaviciosa?",
+                    question: "¿Cuál es uno de los principales cultivos de Esuatini?",
                     options: [
-                        "Alcoholes", "Infusiones", "Gaseosas", "Calientes", "Isotónicas"
+                        "Avellana", "Maíz", "Cáñamo", "Olivo", "Tomate"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "¿Con cuál de estos países comparte frontera Esuatini?",
+                    options: [
+                        "Lesoto", "Botsuana", "Namibia", "Mozambique", "Zimbabue"
+                    ],
+                    answer: 3
+                },
+                {
+                    question: "¿Qué potencia colonial europea gobernó en Esuatini?",
+                    options: [
+                        "Imperio Británico", "Alemania", "Francia", "España", "Portugal"
                     ],
                     answer: 0
                 },
                 {
-                    question: "¿En qué año desembarcó Carlos V en Tazones?",
+                    question: "¿Qué mar u océano baña las costas de Esuatini?",
                     options: [
-                        "1879", "1563", "1486", "1517", "1497"
-                    ],
-                    answer: 3
-                },
-                {
-                    question: "¿Cuál es el más famoso de los Molinos del Ríu Profundu?",
-                    options: [
-                        "Molín de Perniles", "Molín La Peña", "Molín El Pitu", "Molín de Villaverde", "Molín de Griselda"
-                    ],
-                    answer: 1
-                },
-                {
-                    question: "Además de Villaviciosa, ¿qué actual concejo pertenecía al territorio histórico de Maliaio?",
-                    options: [
-                        "Colunga", "Sariego", "Cabranes", "Valdés", "Xixón"
-                    ],
-                    answer: 2
-                },
-                {
-                    question: "Completa la canción: \"Ta sabrosona y cantarina, ta pistonuda y [...]\"",
-                    options: [
-                        "sabe perbién", "bébese bien", "muncho alcohol tien", "siéntame bien", "tú tamién"
-                    ],
-                    answer: 1
-                },
-                {
-                    question: "Además de la manzana, ¿cuál es la fruta más característica de Villaviciosa?",
-                    options: [
-                        "Plátano", "Piña", "Melocotón", "Higo", "Arándano"
+                        "Pacífico", "Atlántico", "Índico", "Mediterráneo", "Esuatini no tiene costa"
                     ],
                     answer: 4
                 },
                 {
-                    question: "¿A qué concejo pertenece el Picu Fariu?",
+                    question: "¿Cuál es la capital legislativa de Esuatini?",
                     options: [
-                        "Xixón", "Villaviciosa", "Sariego", "Siero", "Cabranes"
-                    ],
-                    answer: 2
-                },
-                {
-                    question: "¿Qué tipo de animal es un bugre?",
-                    options: [
-                        "Pez", "Crustáceo", "Mamífero", "Molusco", "Ave"
+                        "Mbabane", "Lobamba", "Manzini", "Matata", "Mgazini"
                     ],
                     answer: 1
                 },
                 {
-                    question: "¿Qué postre es típico consumir en Pascua?",
+                    question: "¿En qué año se independizó Esuatini?",
                     options: [
-                        "Tartaletas", "Pastel de tiñosu", "Carbayones", "Picatostes", "Empanada de cabello de ángel"
+                        "2003", "1918", "1903", "1894", "1968"
+                    ],
+                    answer: 4
+                },
+                {
+                    question: "¿Con qué otro país comparte esuatini el embalse de Pongolapoort?",
+                    options: [
+                        "Mozambique", "Lesoto", "Sudáfrica", "Botsuana", "Namibia"
+                    ],
+                    answer: 2
+                },
+                {
+                    question: "¿Cuál es la religión mayoritaria en Esuatini?",
+                    options: [
+                        "Catolicismo", "Cristianismo protestante", "Budismo", "Islam sunita", "Judaísmo"
+                    ],
+                    answer: 1
+                },
+                {
+                    question: "¿Cuál es el gentilicio en castellano de Esuatini?",
+                    options: [
+                        "Esuatinés", "Suatín", "Esua", "Suazi", "Esuatinero"
                     ],
                     answer: 3
                 },
                 {
-                    question: "¿Quien esculpió la Exaltación de la Manzana?",
+                    question: "¿Qué sistema de gobierno tiene Esuatini?",
                     options: [
-                        "Eduardo Úrculo", "José Cardín Fernández", "Pilar Fernández Carballedo", "Covadonga Romero Rodríguez", "Francisco Fresno"
+                        "Monarquía absoluta", "República federal", "Confederación de estados", "Estado federal", "República soviética"
                     ],
                     answer: 0
                 }

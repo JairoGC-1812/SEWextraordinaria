@@ -2,13 +2,12 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
     <Document>
         <Placemark>
-            <name>Ruta urbana Villaviciosa</name>
+            <name>Ruta por el sureste de Esuatini</name>
             <LineString>
                 <extrude>1</extrude>
                 <tesellate>1</tesellate>
-                <coordinates>-5.433561,43.481320,6 -5.432506,43.482120,9 -5.434271,43.481666,8
-                    -5.436343,43.481826,6 -5.435038,43.480061,8 -5.434361,43.478750,19
-                    -5.434233,43.480257,10 </coordinates>
+                <coordinates>31.968260,-26.853601,91 31.941927,-26.988993,215
+                    31.926027,-27.080172,216 31.901969,-27.239307,172 31.951270,-27.280946,147 </coordinates>
                 <altitudeMode>clampToGround</altitudeMode>
             </LineString>
             <Style>

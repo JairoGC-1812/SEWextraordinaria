@@ -55,6 +55,7 @@ class Database
             nombre VARCHAR(255) NOT NULL,
             descripcion LONGTEXT NOT NULL,
             max_ocupacion INT NOT NULL,
+            duracion_fija BOOL NOT NULL,
             precio DECIMAL(50,2) NOT NULL,
             PRIMARY KEY(id),
             CHECK (max_ocupacion > 0),
@@ -69,25 +70,35 @@ class Database
             )";
 
         $bookTable = "CREATE TABLE IF NOT EXISTS Reserva(
-            id INT AUTO_INCREMENT,
+            id INT NOT NULL AUTO_INCREMENT,
             id_usuario INT NOT NULL,
             id_recurso INT NOT NULL,
             num_personas INT NOT NULL,
-            fecha DATETIME NOT NULL,
+            fecha_inicio DATETIME NOT NULL,
+            fecha_fin DATETIME,
             PRIMARY KEY(id),
             FOREIGN KEY(id_usuario) REFERENCES Usuario(id),
             FOREIGN KEY(id_recurso) REFERENCES Recurso(id)
             )";
+
         $routeTable = "CREATE TABLE IF NOT EXISTS Ruta(
             id INT NOT NULL,
             transporte TINYTEXT,
-            duracion INT,
             PRIMARY KEY(id),
             FOREIGN KEY(id) REFERENCES Recurso(id)
         )";
+
         $restaurantTable = "CREATE TABLE IF NOT EXISTS Restaurante(
-            id INT,
+            id INT NOT NULL,
             menu LONGTEXT,
+            PRIMARY KEY(id),
+            FOREIGN KEY(id) REFERENCES Recurso(id)
+        )";
+        $hotelTable = "CREATE TABLE IF NOT EXISTS Hotel(
+            id INT NOT NULL,
+            puntuacion DECIMAL(2,1),
+            CHECK(puntuacion >= 0.0),
+            CHECK(puntuacion <= 10.0),
             PRIMARY KEY(id),
             FOREIGN KEY(id) REFERENCES Recurso(id)
         )";
@@ -110,6 +121,9 @@ class Database
         if (!($db->query($restaurantTable) === TRUE)) {
             echo "<h2>Error en la creación de la tabla Restaurante: " . $db->error . "</h2>";
         }
+        if (!($db->query($hotelTable) === TRUE)) {
+            echo "<h2>Error en la creación de la tabla Hotel: " . $db->error . "</h2>";
+        }
 
         $db->close();
 
@@ -124,6 +138,7 @@ class Database
         $this->populateBookings();
         $this->populateRoutes();
         $this->populateRestaurants();
+        $this->populateHotels();
     }
 
     private function populateUsers()
@@ -171,10 +186,12 @@ class Database
             $nombre = $col[0];
             $descripcion = $col[1];
             $max_ocupacion = $col[2];
-            $precio = $col[3];
+            $duracion_fija = $col[3];
+            $precio = $col[4];
 
-            $statement = $db->prepare("INSERT INTO Recurso (nombre, descripcion, max_ocupacion, precio) VALUES (?,?,?,?)");
-            $statement->bind_param('ssid', $nombre, $descripcion, $max_ocupacion, $precio);
+
+            $statement = $db->prepare("INSERT INTO Recurso (nombre, descripcion, max_ocupacion, duracion_fija, precio) VALUES (?,?,?,?,?)");
+            $statement->bind_param('ssisd', $nombre, $descripcion, $max_ocupacion, $duracion_fija, $precio);
             $statement->execute();
             $statement->close();
         }
@@ -226,10 +243,11 @@ class Database
             $id_usuario = $col[0];
             $id_recurso = $col[1];
             $num_personas = $col[2];
-            $fecha = $col[3];
+            $fecha_inicio = $col[3];
+            $fecha_fin = $col[4];
 
-            $statement = $db->prepare("INSERT INTO Reserva (id_usuario, id_recurso, num_personas, fecha) VALUES (?,?,?,?)");
-            $statement->bind_param('iiis', $id_usuario, $id_recurso, $num_personas, $fecha);
+            $statement = $db->prepare("INSERT INTO Reserva (id_usuario, id_recurso, num_personas, fecha_inicio, fecha_fin) VALUES (?,?,?,?,?)");
+            $statement->bind_param('iiiss', $id_usuario, $id_recurso, $num_personas, $fecha_inicio, $fecha_fin);
             $statement->execute();
             $statement->close();
         }
@@ -254,10 +272,9 @@ class Database
 
             $id = $col[0];
             $transporte = $col[1];
-            $duracion = $col[2];
 
-            $statement = $db->prepare("INSERT INTO Ruta (id, transporte, duracion) VALUES (?,?,?)");
-            $statement->bind_param('isi', $id, $transporte, $duracion);
+            $statement = $db->prepare("INSERT INTO Ruta (id, transporte) VALUES (?,?)");
+            $statement->bind_param('is', $id, $transporte);
             $statement->execute();
             $statement->close();
         }
@@ -291,7 +308,32 @@ class Database
         }
         $db->close();
     }
+    private function populateHotels()
+    {
 
+        $db = $this->openConnection();
+
+
+        $res = $db->query("Select COUNT(*) as total FROM Hotel");
+        if ($res->fetch_assoc()['total'] > 0) {
+            $db->close();
+            return;
+        }
+
+        $csv = fopen("hoteles.csv", "r");
+
+        while (($col = fgetcsv($csv, 10000, ",")) !== FALSE) {
+
+            $id = $col[0];
+            $puntuacion = $col[1];
+
+            $statement = $db->prepare("INSERT INTO Hotel (id, puntuacion) VALUES (?,?)");
+            $statement->bind_param('id', $id, $puntuacion, );
+            $statement->execute();
+            $statement->close();
+        }
+        $db->close();
+    }
     public function login($user, $passwd)
     {
         $db = $this->openConnection();
@@ -377,21 +419,26 @@ class Database
 
         $ruta = $this->findById("Ruta", $id);
         $restaurante = $this->findById("Restaurante", $id);
+        $hotel = $this->findById("Hotel", $id);
 
         if (isset($ruta)) {
-            $query = "SELECT Recurso.id, Recurso.nombre, Recurso.descripcion, Recurso.max_ocupacion, Recurso.precio, Ruta.transporte, Ruta.duracion
+            $query = "SELECT Recurso.id, Recurso.nombre, Recurso.descripcion, Recurso.max_ocupacion, Recurso.duracion_fija, Recurso.precio, Ruta.transporte
             FROM Recurso, Ruta
             where (Recurso.id = Ruta.id) AND Recurso.id = ?";
         } else if (isset($restaurante)) {
-            $query = "SELECT Recurso.id, Recurso.nombre, Recurso.descripcion, Recurso.max_ocupacion, Recurso.precio, Restaurante.menu
+            $query = "SELECT Recurso.id, Recurso.nombre, Recurso.descripcion, Recurso.max_ocupacion, Recurso.duracion_fija, Recurso.precio, Restaurante.menu
             FROM Recurso, Restaurante
             where (Recurso.id = Restaurante.id) AND Recurso.id = ?";
-        } else {
+        } else if (isset($hotel)) {
+            $query = "SELECT Recurso.id, Recurso.nombre, Recurso.descripcion, Recurso.max_ocupacion, Recurso.duracion_fija, Recurso.precio, Hotel.puntuacion
+            FROM Recurso, Hotel
+            where (Recurso.id = Hotel.id) AND Recurso.id = ?";
+        }else {
             $query = "SELECT * from Recurso where id = ?";
         }
 
         $query = $db->prepare($query);
-        $query->bind_param('s', $id);
+        $query->bind_param('i', $id);
         $query->execute();
 
         $res = $query->get_result()->fetch_assoc();
@@ -463,13 +510,19 @@ class Database
         return $res;
     }
 
-    public function findOccupiedSpotsByResourceIdAndDate($id, $date)
+    public function findOccupiedSpotsByResourceIdAndDate($id, $startdate, $enddate)
     {
-
         $db = $this->openConnection();
+        if ($enddate == "NULL") { //Si no hay fecha de fin implica que es un recurso que no permite reservas de varios días
+            $query = $db->prepare("SELECT SUM(num_personas) as total FROM Reserva where id_recurso = ? and DATE(fecha_inicio) = DATE(?)");
+            $query->bind_param('is', $id, $startdate);
+        } else {
+            $query = $db->prepare("SELECT SUM(num_personas) as total FROM Reserva 
+            where id_recurso = ? 
+            and ((DATE(?) <= DATE(fecha_fin)) and (DATE(?) >= DATE(fecha_inicio)))");
+            $query->bind_param('iss', $id, $startdate, $enddate);
+        }
 
-        $query = $db->prepare("SELECT SUM(num_personas) as total FROM Reserva where id_recurso = ? and DATE(fecha)= DATE(?)");
-        $query->bind_param('is', $id, $date);
         $query->execute();
 
 
@@ -482,11 +535,32 @@ class Database
 
         return $res['total'];
     }
-    public function book($id_usuario, $id_recurso, $num_personas, $fecha)
+
+    public function findNumberOfDaysByBookingId($id)
     {
         $db = $this->openConnection();
-        $insert = $db->prepare("INSERT INTO Reserva (id_usuario, id_recurso, num_personas, fecha) VALUES (?,?,?,?)");
-        $insert->bind_param('iiis', $id_usuario, $id_recurso, $num_personas, $fecha);
+        $query = $db->prepare("SELECT DATEDIFF(fecha_fin, fecha_inicio) as total FROM Reserva where id = ?");
+        $query->bind_param('i', $id);
+
+        $query->execute();
+
+        $res = array();
+
+        $res = $query->get_result()->fetch_assoc();
+
+        $query->close();
+        $db->close();
+
+        return $res['total'];
+    }
+
+
+
+    public function book($id_usuario, $id_recurso, $num_personas, $fecha_inicio, $fecha_fin)
+    {
+        $db = $this->openConnection();
+        $insert = $db->prepare("INSERT INTO Reserva (id_usuario, id_recurso, num_personas, fecha_inicio, fecha_fin) VALUES (?,?,?,?,?)");
+        $insert->bind_param('iiiss', $id_usuario, $id_recurso, $num_personas, $fecha_inicio, $fecha_fin);
         $insert->execute();
 
         $insert->close();

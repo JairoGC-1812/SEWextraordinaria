@@ -2,13 +2,13 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
     <Document>
         <Placemark>
-            <name>Ruta los Molinos del Ríu Profundu</name>
+            <name>Viaje en coche por Esuatini</name>
             <LineString>
                 <extrude>1</extrude>
                 <tesellate>1</tesellate>
-                <coordinates>-5.438658,43.461328,34 -5.434374,43.460210,31 -5.424323,43.456533,54
-                    -5.421454,43.452277,63 -5.408034,43.450349,102 -5.397353,43.439629,145
-                    -5.391802,43.433653,180 </coordinates>
+                <coordinates>31.315101,-26.519248,625 31.756084,-26.657439,238
+                    31.879848,-26.261067,286 31.132810,-25.950093,1203 31.117464,-26.142209,1430
+                    31.119700,-26.302734,1258 31.175529,-26.400341,750 31.195724,-26.479901,712 </coordinates>
                 <altitudeMode>clampToGround</altitudeMode>
             </LineString>
             <Style>

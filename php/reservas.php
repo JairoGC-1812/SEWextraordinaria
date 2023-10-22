@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="author" content="Jairo García Castro - UO271449" />
-    <meta name="description" content="Sección de reserva de recursos Turísticos de Villaviciosa" />
-    <meta name="keywords" content="Villaviciosa, turismo, restaurantes, rutas, recursos, eventos" />
+    <meta name="description" content="Sección de reserva de recursos Turísticos de Esuatini" />
+    <meta name="keywords" content="Esuatini, Suazilandia, turismo, restaurantes, rutas, recursos, eventos" />
 
-    <title>Villaviciosa Turismo - Meteorología</title>
+    <title>Turismo Esuatini - Reservas</title>
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="../estilo/nav.css" />
     <link rel="stylesheet" type="text/css" href="../estilo/layout.css" />
@@ -26,7 +26,7 @@
     $login = new UserManagement($db);
     ?>
     <header>
-        <h1>Villaviciosa Turismo</h1>
+        <h1>Turismo Esuatini</h1>
         <nav>
             <a href="../index.html" title="Página de inicio" tabindex="1" accesskey="I">Inicio</a>
             <a href="../gastronomia.html" title="Gastronomía" tabindex="2" accesskey="G">Gastronomía</a>
@@ -58,7 +58,14 @@
                         }
                     }
                     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                        $this->bookResource($_POST['id_recurso'], $_POST['date'], $_POST['hour'], $_POST['num_personas']);
+                        if(isset($_POST['hour'])) {
+                            $hour = $_POST['hour'];
+                            $enddate = null;
+                        } else {
+                            $hour = null;
+                            $enddate = $_POST['enddate'];
+                        }
+                        $this->bookResource($_POST['id_recurso'], $_POST['startdate'], $enddate, $hour, $_POST['num_personas']);
                     }
 
                 }
@@ -111,16 +118,39 @@
                 echo "<dd> " . $r['max_ocupacion'] . "</dd>";
                 echo "<dt>Precio:</dt>";
                 echo "<dd>" . $r['precio'] . "€</dd>";
+
+                if (isset($r['puntuacion'])) {
+
+                    echo "<dt>Puntuacion:</dt>";
+                    echo "<dd>" . $r['puntuacion'] . "</dd>";
+                }
+                if (isset($r['transporte'])) {
+
+                    echo "<dt>Transporte:</dt>";
+                    echo "<dd>" . $r['transporte'] . "</dd>";
+                }
                 echo "</dl>";
 
-                echo "<p> Disponible de " . $open . " a " . $close . "</p>";
-                echo "<form action='#' method='POST'>";
+                if ($r['duracion_fija'] == 0) {
+                    echo "<p>Horario de registro de " . $open . " a " . $close . "</p>";
+                    echo "<form action='#' method='POST'>";
 
-                echo "<label for='hour'> Seleccione la hora de reserva: </label>";
-                echo "<input id='hour' name='hour' type='time' min='" . $open . "'max='" . $close . "'required/>";
+                    echo "<label for='startdate'> Seleccione el día de entrada: </label>";
+                    echo "<input id='startdate' name='startdate' type='date' min='" . date("Y-m-d") . "'required/>";
 
-                echo "<label for='date'> Seleccione el día de la reserva: </label>";
-                echo "<input id='date' name='date' type='date' min='" . date("Y-m-d") . "'required/>";
+                    echo "<label for='endate'> Seleccione el día de salida: </label>";
+                    echo "<input id='enddate' name='enddate' type='date' min='" . date("Y-m-d") . "'required/>";
+
+                } else {
+                    echo "<p> Disponible de " . $open . " a " . $close . "</p>";
+                    echo "<form action='#' method='POST'>";
+
+                    echo "<label for='hour'> Seleccione la hora de reserva: </label>";
+                    echo "<input id='hour' name='hour' type='time' min='" . $open . "'max='" . $close . "'required/>";
+
+                    echo "<label for='startdate'> Seleccione el día de la reserva: </label>";
+                    echo "<input id='startdate' name='startdate' type='date' min='" . date("Y-m-d") . "'required/>";
+                }
 
                 echo "<label for='num_personas'> Seleccione el número de personas: </label>";
                 echo "<input id='num_personas' type='number' name='num_personas' value=0 min='1' max='" . $r['max_ocupacion'] . "'/>";
@@ -130,30 +160,42 @@
 
             }
 
-            public function bookResource($id, $date, $time, $num_personas)
+            public function bookResource($id, $startdate, $enddate, $time, $num_personas)
             {
                 $r = $this->db->findResourceById($id);
                 $hours = $this->db->findAvailabilityByResourceId($id);
-                // Convertir al formato de mysql
-                $time = $time . ":00";
-                $date = $date . " " . $time;
 
-                if (strtotime($date) < strtotime('now'))
+                if (isset($enddate)) {
+                    $startdate = $startdate . " " . "12:00:00";
+                    $enddate = $enddate . " " . "23:59:59";
+                } else {
+                    // Convertir al formato de mysql
+                    $time = $time . ":00";
+                    $startdate = $startdate . " " . $time;
+                }
+
+                if (strtotime($startdate) < strtotime('now') || ( isset($enddate) && strtotime($enddate) < strtotime('now')))
                     return;
-                if (strtotime($time) < strtotime($hours['hora_apertura']))
+                if (isset($time) && strtotime($time) < strtotime($hours['hora_apertura']))
                     return;
-                if (strtotime($time) > strtotime($hours['hora_cierre']))
+                if (isset($time) && strtotime($time) > strtotime($hours['hora_cierre']))
                     return;
 
-                $freeSpots = $r['max_ocupacion'] - $this->db->findOccupiedSpotsByResourceIdAndDate($id, $date);
+                $freeSpots = $r['max_ocupacion'] - $this->db->findOccupiedSpotsByResourceIdAndDate($id, $startdate, $enddate);
 
                 if ($num_personas > $freeSpots) {
                     $this->showBookingView($id);
                     echo "<p> Lo sentimos, " . $r['nombre'] . " tiene aforo completo para esa fecha</p>";
                     return;
                 }
+                if (strtotime($startdate) >= strtotime($enddate)) {
+                    $this->showBookingView($id);
+                    echo "<p> La fecha de entrada debe ser anterior a la de salida.";
+                    return;
+                }
 
-                $r = $this->db->book($_SESSION['user_id'], $id, $num_personas, $date);
+
+                $r = $this->db->book($_SESSION['user_id'], $id, $num_personas, $startdate, $enddate);
                 $this->showBookingSummary();
 
             }
@@ -175,13 +217,13 @@
                 ";
                 foreach ($bookings as $b) {
                     $r = $this->db->findResourceById($b['id_recurso']);
-                    $price = $b['num_personas'] * $r['precio'];
+                    $price = $this->calculatePrice($b, $r);
                     $totalPrice += $price;
                     echo "
                     <tr>
                         <td headers='recurso'>" . $r['nombre'] . "</td>
                         <td headers='numPersonas'>" . $b['num_personas'] . "</td>
-                        <td headers='fecha'>" . $b['fecha'] . "</td>
+                        <td headers='fecha'>" . $b['fecha_inicio'] . "</td>
                         <td headers='precio'>" . $price . "</td>
                     </tr>
                     ";
@@ -194,6 +236,16 @@
                 </dl>
                 ";
             }
+            public function calculatePrice($b, $r)
+            {
+
+                $price = $b['num_personas'] * $r['precio'];
+                if ($r['duracion_fija'] == 0) {
+                    $price *= $this->db->findNumberOfDaysByBookingId($b['id']);
+                }
+
+                return $price;
+            }
         }
         $db = new Database();
         $reservas = new Reservas($db);
@@ -201,7 +253,7 @@
     </main>
 
     <footer>
-        <p>Jairo García Castro - Software y Estándares para la Web 2022</p>
+        <p>Jairo García Castro - Software y Estándares para la Web 2023</p>
     </footer>
 </body>
 
