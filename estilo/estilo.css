@@ -37,6 +37,7 @@ body {
     text-align: justify;
     background-color: rgb(117, 166, 206);
     font-size: large;
+    color: black;
 }
 
 /* Especificidad: 0 0 1 */

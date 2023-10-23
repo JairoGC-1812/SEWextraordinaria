@@ -138,7 +138,7 @@
                     echo "<label for='startdate'> Seleccione el día de entrada: </label>";
                     echo "<input id='startdate' name='startdate' type='date' min='" . date("Y-m-d") . "'required/>";
 
-                    echo "<label for='endate'> Seleccione el día de salida: </label>";
+                    echo "<label for='enddate'> Seleccione el día de salida: </label>";
                     echo "<input id='enddate' name='enddate' type='date' min='" . date("Y-m-d") . "'required/>";
 
                 } else {

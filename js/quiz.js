@@ -155,16 +155,16 @@ class Quiz {
             return "¡¿Pero tú leíste algo?! Revisa y vuelve en un ratín anda...";
 
         if (this.correct / totalQuestions < 0.5)
-            return "¡Andas cerca! Revisa un poco más y seguro que apruebas";
+            return "¡Andas cerca! Revisa un poco más y seguro que apruebas.";
 
         if (this.correct / totalQuestions <= 0.7)
-            return "Más o menos te manejas, pero todavía se puede mejorar";
+            return "Más o menos te manejas, pero todavía se puede mejorar.";
 
         if (this.correct / totalQuestions <= 0.9)
-            return "¡Así se hace! Poca gente conoce mejor que tu La Villa";
+            return "¡Así se hace! Poca gente conoce Esuatini mejor que tú.";
 
         if (this.correct / totalQuestions <= 1)
-            return "¡Qué profesional! Por tus venas corre pura sangre maliaya";
+            return "¡Qué profesional! Ya tenemos al siguiente rey de Esuatini.";
 
     }
     reset() {

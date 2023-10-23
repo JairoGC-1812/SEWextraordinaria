@@ -60,19 +60,19 @@ class UserManagement
         <form method='post' action='#'>
             <p>
                 <label for='user'> Usuario: </label>
-                <input type='text' placeholder='Usuario' name='user' id='user'/>
+                <input type='text' placeholder='Usuario' name='user' id='user' required/>
             </p>
             <p>
                 <label for='name'> Nombre: </label>
-                <input type='text' placeholder='Nombre' name='name' id='name'/>
+                <input type='text' placeholder='Nombre' name='name' id='name' required/>
             </p>
             <p>
                 <label for='surname'> Apellidos: </label>
-                <input type='text' placeholder='Apellidos' name='surname' id='surname'/>
+                <input type='text' placeholder='Apellidos' name='surname' id='surname' required/>
             </p>
             <p>
                 <label for='passwd'> Contraseña:</label>
-                <input type='password' placeholder='Contraseña' name='passwd' id='passwd'/>
+                <input type='password' placeholder='Contraseña' name='passwd' id='passwd' required/>
             </p>
             <p>
                 <input type='submit' value='Registrarse'/>
