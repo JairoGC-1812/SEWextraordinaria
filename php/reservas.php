@@ -58,7 +58,7 @@
                         }
                     }
                     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                        if(isset($_POST['hour'])) {
+                        if (isset($_POST['hour'])) {
                             $hour = $_POST['hour'];
                             $enddate = null;
                         } else {
@@ -174,7 +174,7 @@
                     $startdate = $startdate . " " . $time;
                 }
 
-                if (strtotime($startdate) < strtotime('now') || ( isset($enddate) && strtotime($enddate) < strtotime('now')))
+                if (strtotime($startdate) < strtotime('now') || (isset($enddate) && strtotime($enddate) < strtotime('now')))
                     return;
                 if (isset($time) && strtotime($time) < strtotime($hours['hora_apertura']))
                     return;
@@ -188,7 +188,7 @@
                     echo "<p> Lo sentimos, " . $r['nombre'] . " tiene aforo completo para esa fecha</p>";
                     return;
                 }
-                if (strtotime($startdate) >= strtotime($enddate)) {
+                if (isset($enddate) && strtotime($startdate) >= strtotime($enddate)) {
                     $this->showBookingView($id);
                     echo "<p> La fecha de entrada debe ser anterior a la de salida.";
                     return;

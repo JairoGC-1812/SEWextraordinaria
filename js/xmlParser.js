@@ -70,7 +70,7 @@ class XMLParser {
             txt += "</section>";
 
             txt += "<section>";
-            txt += "<h4> Altimetría <h4>";
+            txt += "<h4> Altimetría </h4>";
             txt += "<a href=\"" + $("altimetria", rutas[i]).text() + "\">Altimetría de " + $(rutas[i]).attr("nombre") + "</a>";
             txt += this.createSVG(rutas[i]);
             txt += "</section>";
@@ -102,14 +102,19 @@ class XMLParser {
         maxHeight = lastHeight;
 
         for (let i = 0; i < hitos.length; i++) {
+            let height = parseInt($("hito>coordenadas", hitos[i]).attr("altitud"));
+            maxHeight = height > maxHeight ? height : maxHeight;
+            //Truco para hacer el trazado correctamente sin usar el atributo "transform", no permitido para el elemento <svg> en el estándar HTML5
+        }
+
+        for (let i = 0; i < hitos.length; i++) {
             totalDistance += parseInt($(hitos[i]).attr("distancia-desde-anterior"));
 
             let height = parseInt($("hito>coordenadas", hitos[i]).attr("altitud"));
-            maxHeight = height > maxHeight ? height : maxHeight;
             let line = "<line x1=\"" + lastDistance +
-                "\" y1=\"" + lastHeight +
+                "\" y1=\"" + (maxHeight - lastHeight) +
                 "\" x2=\"" + totalDistance +
-                "\" y2=\"" + height +
+                "\" y2=\"" + (maxHeight - height) +
                 "\" style=\"stroke:#f00; stroke-width: 3; stroke-linecap: round;\"/>";
 
             lastDistance = totalDistance;
@@ -120,8 +125,7 @@ class XMLParser {
 
         let svg = "<svg width=\"" + totalDistance +
             "\" height=\"" + (maxHeight + 10) +
-            "\" viewbox=\"0 0 " + totalDistance + " " + maxHeight +
-            "\" transform=\"matrix(1,0,0,-1,0,0)\">";
+            "\" viewbox=\"0 0 " + totalDistance + " " + maxHeight + "\">";
 
         for (let i = 0; i < lines.length; i++) {
             svg += lines[i];
@@ -170,11 +174,11 @@ class XMLParser {
         kml += "</Placemark>";
         kml += "</Document>";
         kml += "</kml>";
-        
+
         console.log("Nombre de la ruta: " + $(ruta).attr("nombre"));
         console.log(kml);
     }
-    
+
     initMap() {
         var script = document.createElement("script");
         script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBXjk9mx9DWgzplUVXKroSbRdrewyo0uho&callback=initMap"
@@ -195,8 +199,8 @@ class XMLParser {
                         for (let j = 0; j < coordArray.length; j++) {
                             let lat = parseFloat(coordArray[j].split(",")[1]);
                             let lng = parseFloat(coordArray[j].split(",")[0]);
-                            path[j] = {lat: lat, lng: lng};
-                        }                     
+                            path[j] = { lat: lat, lng: lng };
+                        }
                         maps[i - 1] = new google.maps.Map($("aside[title=\"ruta" + i + "\"]").get(0), {
                             center: path[parseInt(path.length / 2)],
                             zoom: 9,
@@ -208,7 +212,7 @@ class XMLParser {
                             strokeColor: $("Style>LineStyle>color", kml).text(),
                             strokeWeight: $("Style>LineStyle>width", kml).text()
                         });
-                        route.setMap(maps[i-1]);
+                        route.setMap(maps[i - 1]);
                     }
 
                 });
