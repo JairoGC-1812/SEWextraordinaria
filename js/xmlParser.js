@@ -38,8 +38,9 @@ class XMLParser {
             txt += "<dt>Referencias</dt>";
             let ref = $("referencias>referencia", rutas[i]);
             for (let r = 0; r < ref.length; r++) {
-                txt += "<dd><a href=\"" + $(ref[r]).text() + "\">" +
-                    $(ref[r]).text().split("/")[2] + "</a></dd>";
+                let link_text = $(ref[r]).text().split("/");
+                link_text = link_text[2] + "/" + link_text[link_text.length - 1];
+                txt += "<dd><a href=\"" + $(ref[r]).text() + "\">" + link_text + "</a></dd>";
             }
             txt += "</dl>";
             txt += "</section>";
@@ -77,6 +78,7 @@ class XMLParser {
 
             txt += "<section>";
             txt += "<h4> Planimetría </h4>";
+            txt += "<p>Aquí se puede observar la planimetría de la ruta sobre un mapa dinámico.</p>"
             txt += "<aside title=\"ruta" + (i + 1) + "\">";
             txt += "</aside>";
             txt += "</section>";
